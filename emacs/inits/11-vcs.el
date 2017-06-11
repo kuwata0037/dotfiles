@@ -5,6 +5,7 @@
 (setq vc-follow-symlinks t)
 
 ;;; Git
+(el-get-bundle git-modes)
 (el-get-bundle magit)
 (use-package magit
   :if   (executable-find "git")
