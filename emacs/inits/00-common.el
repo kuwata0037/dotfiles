@@ -1,21 +1,51 @@
 ;;; 00-common.el
 ;;
 ;;; Code:
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;-------------------------------
 ;;; General
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Startup display
+;;;-------------------------------
+;;; Disbaled startup display
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
 
-;;; Path
+;;; Setup enviloment path
 (when (memq window-system '(mac ns))
   (el-get-bundle! exec-path-from-shell
-    (exec-path-from-shell-initalize)))
+    (exec-path-from-shell-initialize)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Enable open graphic files
+(auto-image-file-mode)
+
+;;; Enable edit compressed files
+(auto-compression-mode)
+
+;;; Enable auto load files when
+;;; modified by an external program
+(global-auto-revert-mode)
+
+;;; Enable making buffer name uniquely
+(use-package uniquify
+  :config (setq uniquify-buffer-name-style 'post-forward-angle-brackets))
+
+;;;-------------------------------
+;;; Coding system
+;;;------------------------------
+(set-language-environment "Japanese")
+(prefer-coding-system 'utf-8)
+;; For windows
+(when (eq window-system 'w32)
+  (set-file-name-coding-system 'cp932)
+  (setq locale-coding-system   'cp932))
+;; For mac
+(when (eq system-type 'darwin)
+  (require 'ucs-normalize)
+  (set-file-name-coding-system 'utf-8-hfs)
+  (setq locale-coding-system   'utf-8-hfs))
+
+;;;------------------------------
 ;;; History
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;------------------------------
 (defvar my/history-dir (locate-user-emacs-file ".history/"))
 (defun my/set-history (&rest args)
   (concat my/history-dir (mapconcat 'identity args "")))
@@ -39,22 +69,22 @@
 (setq trash-directory "~/.Trash")
 
 ;;; Recentf
-(recentf-mode)
 (setq recentf-save-file (my/set-history "recentf"))
 (setq recentf-max-menu-items    10)
 (setq recentf-max-saved-items 2000)
 (setq recentf-auto-cleanup  'never)
 (setq recentf-exclude '("recentf"))
 (setq recentf-auto-save-timer (run-with-idle-timer 60 t 'recentf-save-list))
+(recentf-mode)
 
 ;;; Saveplace
-(save-place-mode)
 (setq save-place-file (my/set-history "saveplace"))
+(save-place-mode)
 
 ;;; Savehist
-(savehist-mode)
 (setq savehist-file (my/set-history "savehist"))
 (setq history-length 3000)
+(savehist-mode)
 
 ;;; Undo
 (el-get-bundle! undohist
@@ -67,3 +97,5 @@
 (el-get-bundle! point-undo
   (global-set-key (kbd "M-]") 'point-undo)
   (global-set-key (kbd "M-[") 'point-redo))
+
+;;; 00-common.el ends here
