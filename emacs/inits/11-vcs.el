@@ -2,6 +2,7 @@
 ;;
 ;;; Code:
 
+;;; Common
 (setq vc-follow-symlinks t)
 
 ;;; Git

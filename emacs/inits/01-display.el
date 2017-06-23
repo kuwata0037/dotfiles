@@ -9,10 +9,8 @@
 
 ;;; Current line
 (defface my/hl-line-face
-  ;; 背景がdarkならば背景色を紺に
   '((((class color) (background dark))
      (:background "NavyBlue" t))
-    ;; 背景色がlightならば背景色を緑に
     (((class color) (background light))
      (:background "LightGoldenrodYellow" t))
     (t (:bold t)))
@@ -30,8 +28,10 @@
 (electric-layout-mode)
 (add-to-list 'electric-pair-pairs   '(?{ . ?}))
 (add-to-list 'electric-layout-rules '(?{ . after))
+
 (show-paren-mode)
 (setq show-paren-delay 0.3)
+
 (el-get-bundle rainbow-delimiters)
 (use-package rainbow-delimiters
   :commands rainbow-delimiters-mode

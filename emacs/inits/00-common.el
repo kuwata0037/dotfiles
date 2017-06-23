@@ -20,8 +20,7 @@
 ;;; Enable edit compressed files
 (auto-compression-mode)
 
-;;; Enable auto load files when
-;;; modified by an external program
+;;; Enable auto load files when modified by an external program
 (global-auto-revert-mode)
 
 ;;; Enable making buffer name uniquely
