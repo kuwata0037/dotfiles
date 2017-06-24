@@ -16,6 +16,11 @@
 (add-hook 'emacs-lisp-mode-hook 'my/elisp-mode-hooks)
 (add-hook 'lisp-interaction-mode-hook 'my/elisp-mode-hooks)
 
+;;; Fish
+(el-get-bundle emacs-fish
+  (add-hook 'fish-mode-hook
+            (lambda () (add-hook 'before-save-hook 'fish_indent-before-save))))
+
 ;;;------------------------------
 ;;; Documentaion language
 ;;;------------------------------
