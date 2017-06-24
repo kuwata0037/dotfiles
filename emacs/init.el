@@ -31,6 +31,10 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
+;;; Lock package version by installed el-get
+(el-get-bundle tarao/el-get-lock
+  (el-get-lock))
+
 ;;; Setup advanced require package macro
 (el-get-bundle! use-package)
 
