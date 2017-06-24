@@ -72,7 +72,7 @@
 (setq recentf-max-menu-items    10)
 (setq recentf-max-saved-items 2000)
 (setq recentf-auto-cleanup  'never)
-(setq recentf-exclude '("recentf"))
+(setq recentf-exclude '("recentf" "COMMIT_EDITMSG" "/.?TAGS" "^/sudo:" ))
 (setq recentf-auto-save-timer (run-with-idle-timer 60 t 'recentf-save-list))
 (recentf-mode)
 
