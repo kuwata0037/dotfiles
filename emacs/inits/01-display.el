@@ -3,6 +3,13 @@
 ;;; Code:
 
 ;;;------------------------------
+;;; Startup
+;;;------------------------------
+;;; Disbaled startup display
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message "")
+
+;;;------------------------------
 ;;; Color
 ;;;------------------------------
 (use-package color)

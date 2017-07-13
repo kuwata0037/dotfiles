@@ -5,10 +5,6 @@
 ;;;-------------------------------
 ;;; General
 ;;;-------------------------------
-;;; Disbaled startup display
-(setq inhibit-startup-screen t)
-(setq initial-scratch-message "")
-
 ;;; Setup enviloment path
 (when (memq window-system '(mac ns))
   (el-get-bundle! exec-path-from-shell
