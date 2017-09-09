@@ -1,1 +1,5 @@
+### My Fish.gitignore
 fishd*
+completions/
+conf.d/
+functions/
