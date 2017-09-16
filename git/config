@@ -49,3 +49,5 @@
 	ga  = log --graph --all --decorate --oneline
 	# fetch
 	fh = fetch --prune
+	# pull
+	pl = pull
