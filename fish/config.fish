@@ -16,12 +16,14 @@ if status --is-login
     end
 end
 
-# alias
+########## alias ##########
+
 alias e='emacsclient -nw -a ""'
 alias ekill='emacsclient -e "(kill-emacs)"'
 alias g='git'
 
-# plugins
+########## plugins ##########
+
 if not test -f ~/.config/fish/functions/fisher.fish
     echo "Installing fisherman for the first time"
     curl -sLo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
