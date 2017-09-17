@@ -1,6 +1,8 @@
 fisherman/await
+oh-my-fish/plugin-extract
 fisherman/fzf
 fisherman/get
 fisherman/getopts
 decors/fish-ghq
 fisherman/last_job_id
+oh-my-fish/plugin-pbcopy
