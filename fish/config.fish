@@ -1,5 +1,20 @@
-# path
-set -g fish_user_paths "/usr/local/bin" $fish_user_paths
+########## path ##########
+
+if status --is-login
+    set -g fish_user_paths /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+
+    # pyenv
+    if test -d $HOME/.pyenv
+        set fish_user_paths $HOME/.pyenv/bin $fish_user_paths
+        source (pyenv init - | psub)
+    end
+
+    # rbenv
+    if test -d $HOME/.rbenv
+        set fish_user_paths $HOME/.rbenv/bin $fish_user_paths
+        source (rbenv init - | psub)
+    end
+end
 
 # alias
 alias e='emacsclient -nw -a ""'
