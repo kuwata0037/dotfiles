@@ -5,13 +5,17 @@ if status --is-login
 
     # pyenv
     if test -d $HOME/.pyenv
-        set fish_user_paths $HOME/.pyenv/bin $fish_user_paths
+        test -d $HOME/.pyenv/bin
+        and set fish_user_paths $HOME/.pyenv/bin $fish_user_paths
+
         source (pyenv init - | psub)
     end
 
     # rbenv
     if test -d $HOME/.rbenv
-        set fish_user_paths $HOME/.rbenv/bin $fish_user_paths
+        test -d $HOME/.rbenv/bin
+        and set fish_user_paths $HOME/.rbenv/bin $fish_user_paths
+
         source (rbenv init - | psub)
     end
 end
