@@ -7,6 +7,14 @@ if status --is-login
     ### path ###
     set -g fish_user_paths /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
+    # for go
+    if test (which go)
+        set -gx GOPATH $HOME
+        set -g fish_user_paths $GOPATH/bin $fish_user_paths
+    end
+
+    set -gx GHQ_ROOT $GOPATH/src
+
     # for pyenv
     if test -d $HOME/.pyenv
         test -d $HOME/.pyenv/bin
