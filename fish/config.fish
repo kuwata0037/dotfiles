@@ -1,12 +1,13 @@
-########## path ##########
+########## env ##########
 
 if status --is-login
     ### locale ###
     set -gx LANG en_US.UTF-8
 
+    ### path ###
     set -g fish_user_paths /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
-    # pyenv
+    # for pyenv
     if test -d $HOME/.pyenv
         test -d $HOME/.pyenv/bin
         and set fish_user_paths $HOME/.pyenv/bin $fish_user_paths
@@ -14,7 +15,7 @@ if status --is-login
         source (pyenv init - | psub)
     end
 
-    # rbenv
+    # for rbenv
     if test -d $HOME/.rbenv
         test -d $HOME/.rbenv/bin
         and set fish_user_paths $HOME/.rbenv/bin $fish_user_paths
