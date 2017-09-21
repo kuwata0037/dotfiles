@@ -37,6 +37,7 @@ end
 alias e='emacsclient -nw -a ""'
 alias ekill='emacsclient -e "(kill-emacs)"'
 alias g='git'
+alias fzf='fzf-tmux'
 
 ########## plugins ##########
 
