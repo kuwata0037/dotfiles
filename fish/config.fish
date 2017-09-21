@@ -1,6 +1,9 @@
 ########## path ##########
 
 if status --is-login
+    ### locale ###
+    set -gx LANG en_US.UTF-8
+
     set -g fish_user_paths /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
     # pyenv
