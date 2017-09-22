@@ -9,7 +9,7 @@ if status --is-login
 
     # for go
     if test (which go)
-        set -gx GOPATH $HOME
+        set -gx GOPATH $HOME/dev
         set -g fish_user_paths $GOPATH/bin $fish_user_paths
     end
 
