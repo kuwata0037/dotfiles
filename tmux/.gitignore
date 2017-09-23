@@ -1,0 +1,3 @@
+### My Tmux.gitignore
+plugins/
+.resurrect/
