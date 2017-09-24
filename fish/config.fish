@@ -30,6 +30,9 @@ if status --is-login
 
         source (rbenv init - | psub)
     end
+
+    ### misc ###
+    set -gx TERM xterm-256color
 end
 
 ########## alias ##########
