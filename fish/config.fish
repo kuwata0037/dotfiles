@@ -35,6 +35,9 @@ if status --is-login
 
     ### misc ###
     set -gx TERM xterm-256color
+
+    # for tpm
+    set -gx TMUX_PLUGIN_MANAGER_PATH $HOME/.config/tmux/plugins/
 end
 
 ########## alias ##########
