@@ -1,6 +1,6 @@
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 CONFPATH   := $(HOME)/.config
-CANDIDATES := $(shell find -maxdepth 1 -mindepth 1 -type d)
+CANDIDATES := $(shell find . -maxdepth 1 -mindepth 1 -type d)
 EXCLUSIONS := %.git %emacs
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
