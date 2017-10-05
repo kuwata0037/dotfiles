@@ -28,3 +28,31 @@ if [[ -d $HOME/.rbenv ]]; then
         eval "$(rbenv init -)"
     fi
 fi
+
+########################################
+### PLUGINS
+export ZPLUG_HOME=$ZDOTDIR/zplug
+if [[ ! -e "$ZPLUG_HOME/init.zsh" ]]; then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+fi
+source $ZPLUG_HOME/init.zsh
+
+# plugins list
+## completions
+zplug "zsh-users/zsh-completions"
+
+## fish-like
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+
+# install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# source plugins and add commands to $PATH
+zplug load --verbose
