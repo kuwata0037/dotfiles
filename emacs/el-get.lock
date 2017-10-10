@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((el-get :checksum "07c75d259d89dabb34878d6085a94fb11aef1947")
+      '((git-gutter :checksum "00c05264af046b5ce248e5b0bc42f117d9c27a09")
+        (el-get :checksum "07c75d259d89dabb34878d6085a94fb11aef1947")
         (init-loader :checksum "5d3cea1004c11ff96b33020e337b03b925c67c42")
         (yaml-mode :checksum "28c34033194130d452d5c958b5241c88d42ca02b")
         (markdown-mode :checksum "2d790a7c72546b96b3fdf57e7b7d6af1663fb721")
