@@ -203,7 +203,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (bind-keys :map global-map
            ("C-a" . my/goto-line-beginning-or-indent)
-           ("C-t" . my/other-window-or-split)
+           ("C-o" . my/other-window-or-split)
            ("C-w" . my/killregion-or-deletewindow)
            ("C-S-f" . forward-word)
            ("C-S-b" . backward-word)
@@ -218,3 +218,5 @@
 (defalias 'rvr 'reverse-region)
 (defalias 'srl 'sort-lines)
 (defalias 'delds 'my/delete-DS_Store-under-current-directory-recursively)
+
+;;; 99-utility.el ends here
