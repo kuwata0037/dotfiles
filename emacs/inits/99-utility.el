@@ -214,3 +214,7 @@
 ;;; Alias
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defalias 'dtw 'delete-trailing-whitespace)
+(defalias 'ddl 'delete-duplicate-lines)
+(defalias 'rvr 'reverse-region)
+(defalias 'srl 'sort-lines)
+(defalias 'delds 'my/delete-DS_Store-under-current-directory-recursively)
