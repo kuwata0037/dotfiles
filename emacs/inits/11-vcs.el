@@ -11,3 +11,5 @@
 (use-package magit
   :if   (executable-find "git")
   :bind ("C-c C-m" . magit-status))
+
+;;; 11-vcs.el ends here

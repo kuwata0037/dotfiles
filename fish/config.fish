@@ -18,18 +18,14 @@ if status --is-login
     set -gx GHQ_ROOT $GOPATH/src
 
     # for pyenv
-    if test -d $HOME/.pyenv
-        test -d $HOME/.pyenv/bin
-        and set fish_user_paths $HOME/.pyenv/bin $fish_user_paths
-
+    if test -d $HOME/.pyenv/bin
+        set fish_user_paths $HOME/.pyenv/bin $fish_user_paths
         source (pyenv init - | psub)
     end
 
     # for rbenv
-    if test -d $HOME/.rbenv
-        test -d $HOME/.rbenv/bin
-        and set fish_user_paths $HOME/.rbenv/bin $fish_user_paths
-
+    if test -d $HOME/.rbenv/bin
+        set fish_user_paths $HOME/.rbenv/bin $fish_user_paths
         source (rbenv init - | psub)
     end
 

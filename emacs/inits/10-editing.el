@@ -65,4 +65,4 @@
       (kill-buffer htmlize-and-browse-buffer-file-name)
       (shell-command (concat "open " htmlize-and-browse-buffer-file-path)))))
 
-;;; 10-editiong.el ends here
+;;; 10-editing.el ends here
