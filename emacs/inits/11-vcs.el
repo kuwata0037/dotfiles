@@ -11,8 +11,3 @@
 (use-package magit
   :if   (executable-find "git")
   :bind ("C-c C-m" . magit-status))
-(el-get-bundle! git-gutter
-  (global-git-gutter-mode t)
-  (git-gutter:linum-setup))
-
-;;; 11-vcs.el ends here
