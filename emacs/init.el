@@ -36,6 +36,8 @@
 ;; Lock package version by installed el-get
 (el-get-bundle tarao/el-get-lock
   (el-get-lock))
+;; Avoid warnings during the compilation to access a variable defined in the feature
+(el-get-bundle tarao/with-eval-after-load-feature-el)
 
 ;;; Setup advanced require package macro
 (el-get-bundle use-package)
