@@ -5,6 +5,7 @@
 ;;; Require
 (require 'cl-lib)
 
+;;; Setup specific direcotry of loading emacs config
 (when load-file-name
   (setq user-emacs-directory (file-name-directory load-file-name)))
 
@@ -31,7 +32,8 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
-;;; Lock package version by installed el-get
+;;; El-get plugins
+;; Lock package version by installed el-get
 (el-get-bundle tarao/el-get-lock
   (el-get-lock))
 
