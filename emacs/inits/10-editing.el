@@ -24,6 +24,15 @@
   :bind   ("C-x j" . open-junk-file)
   :config (setq open-junk-file-format "/var/tmp/junk/%Y-%m%d-%H%M%S."))
 
+;;; Syntax check
+(el-get-bundle flycheck
+  (global-flycheck-mode)
+  (with-eval-after-load-feature 'flycheck
+    (defun my/flycheck-cpp-language ()
+      (setq flycheck-gcc-language-standard   "c++1y")
+      (setq flycheck-clang-language-standard "c++1y"))
+    (add-hook 'c++-mode-hook 'my/flycheck-cpp-language)))
+
 ;;; Execution
 (el-get-bundle quickrun)
 (use-package quickrun
