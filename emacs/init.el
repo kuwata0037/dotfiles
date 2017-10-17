@@ -36,7 +36,7 @@
   (el-get-lock))
 
 ;;; Setup advanced require package macro
-(el-get-bundle! use-package)
+(el-get-bundle use-package)
 
 ;;; Load init files
 (el-get-bundle! init-loader

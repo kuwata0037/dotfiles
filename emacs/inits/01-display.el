@@ -53,7 +53,7 @@
 (set-face-background 'trailing-whitespace "#B14770")
 
 ;;; Difference
-(el-get-bundle! volatile-highlights
+(el-get-bundle volatile-highlights
   (volatile-highlights-mode)
   ;; supprot undo-tree
   (vhl/define-extension 'undo-tree 'undo-tree-yany 'undo-tree-move)
