@@ -21,7 +21,7 @@
 ;;; Open junk file
 (el-get-bundle open-junk-file)
 (use-package open-junk-file
-  :bind   ("C-x j" . open-junk-file)
+  :bind   ("C-c C-j" . open-junk-file)
   :config (setq open-junk-file-format "/var/tmp/junk/%Y-%m%d-%H%M%S."))
 
 ;;; Syntax check
