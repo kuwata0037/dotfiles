@@ -33,9 +33,8 @@
 ;;; Parentheses
 (electric-pair-mode)
 (electric-layout-mode)
-(add-to-list 'electric-pair-pairs   '(?{ . ?}))
-(add-to-list 'electric-layout-rules '(?{ . after))
 (add-to-list 'electric-pair-pairs '(?' . ?'))
+(add-to-list 'electric-pair-pairs '(?{ . ?}))
 
 (show-paren-mode)
 (setq show-paren-delay 0.3)
