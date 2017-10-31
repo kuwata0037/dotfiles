@@ -2,8 +2,9 @@
 ;;
 ;;; Code:
 
-;;; Add execute bits
+;;; Add saved hook
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;; Tab
 (setq-default tab-width 4)
