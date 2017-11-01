@@ -71,6 +71,9 @@
 ;;;------------------------------
 ;;; Configulation language
 ;;;------------------------------
+;;; Docker
+(el-get-bundle dockerfile-mode)
+
 ;;; Yaml
 (el-get-bundle yaml-mode)
 (use-package yaml-mode
