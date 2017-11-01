@@ -25,6 +25,44 @@
   :bind   ("C-c C-j" . open-junk-file)
   :config (setq open-junk-file-format "/var/tmp/junk/%Y-%m%d-%H%M%S."))
 
+;;; Completion
+(el-get-bundle company-mode
+  (global-company-mode t)
+  (with-eval-after-load-feature 'company
+    ;; general
+    (setq company-idle-delay 0.2)
+    (setq company-minimum-prefix-length 2)
+    (setq company-selection-wrap-around t)
+    ;; keybind
+    (bind-keys :map company-active-map
+               ("C-n" . company-select-next)
+               ("C-p" . company-select-previous)
+               ("C-s" . company-filter-candidates))
+    (bind-keys :map company-search-map
+               ("C-n" . company-select-next)
+               ("C-p" . company-select-previous))
+    ;; color
+    (set-face-attribute 'company-tooltip nil
+                        :foreground "black"
+                        :background "lightgrey")
+    (set-face-attribute 'company-tooltip-common nil
+                        :foreground "black"
+                        :background "lightgrey")
+    (set-face-attribute 'company-tooltip-common-selection nil
+                        :foreground "white"
+                        :background "steelblue")
+    (set-face-attribute 'company-tooltip-selection nil
+                        :foreground "black"
+                        :background "steelblue")
+    (set-face-attribute 'company-preview-common nil
+                        :foreground "lightgrey"
+                        :background nil
+                        :underline t)
+    (set-face-attribute 'company-scrollbar-fg nil
+                        :background "orange")
+    (set-face-attribute 'company-scrollbar-bg nil
+                        :background "gray40")))
+
 ;;; Syntax check
 (el-get-bundle flycheck
   (global-flycheck-mode)
