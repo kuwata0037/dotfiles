@@ -7,6 +7,11 @@ if status --is-login
     ### path ###
     set -g fish_user_paths /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
+    # for rust
+    if test -d $HOME/.cargo/bin
+        set fish_user_paths $HOME/.cargo/bin $fish_user_paths
+    end
+
     # for go
     if test (which go)
         set -gx GOPATH $HOME/dev
