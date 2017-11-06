@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((dockerfile-mode :checksum "3c6bc90360a2df53caad1721ee4c8285e2e22369")
+      '((rust-mode :checksum "04e3078ffc5f4b95e0a62960e36866d4bf1a9537")
+        (dockerfile-mode :checksum "3c6bc90360a2df53caad1721ee4c8285e2e22369")
         (company-mode :checksum "66e43a3a3388c3af3dd851ba0a1f48dcb6efb1ae")
         (flycheck :checksum "0d982b2860927a03e4cdf663750bd3b4c128918a")
         (pkg-info :checksum "76ba7415480687d05a4353b27fea2ae02b8d9d61")

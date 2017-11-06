@@ -5,6 +5,10 @@
 ;;;------------------------------
 ;;; Compiler language
 ;;;------------------------------
+;;; Rust
+(el-get-bundle rust-mode
+  (with-eval-after-load-feature 'rust-mode
+    (setq rust-format-on-save t)))
 
 ;;;------------------------------
 ;;; Interpreter language
