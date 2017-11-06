@@ -14,6 +14,9 @@
 ;;;------------------------------
 (use-package color)
 
+;;; Color theme
+(load-theme 'wombat t)
+
 ;;; Current line
 (defface my/hl-line-face
   '((((class color) (background dark))
