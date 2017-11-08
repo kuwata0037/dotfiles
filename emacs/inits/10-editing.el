@@ -37,6 +37,8 @@
     (bind-keys :map company-active-map
                ("C-n" . company-select-next)
                ("C-p" . company-select-previous)
+               ("C-f" . company-complete-selection)
+               ("C-e" . company-complete-selection)
                ("C-s" . company-filter-candidates))
     (bind-keys :map company-search-map
                ("C-n" . company-select-next)
