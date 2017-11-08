@@ -9,6 +9,11 @@
 (el-get-bundle rust-mode
   (with-eval-after-load-feature 'rust-mode
     (setq rust-format-on-save t)))
+(el-get-bundle racer-rust/emacs-racer
+  :name racer
+  :depends (rust-mode company-mode dash s f)
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode))
 
 ;;;------------------------------
 ;;; Interpreter language
