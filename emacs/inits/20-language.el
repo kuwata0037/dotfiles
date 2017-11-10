@@ -83,6 +83,9 @@
 ;;; Docker
 (el-get-bundle dockerfile-mode)
 
+;;; Toml
+(el-get-bundle toml-mode)
+
 ;;; Yaml
 (el-get-bundle yaml-mode)
 (use-package yaml-mode
