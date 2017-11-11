@@ -15,6 +15,7 @@
   (add-hook 'rust-mode-hook #'racer-mode)
   (add-hook 'racer-mode-hook #'eldoc-mode))
 (el-get-bundle cargo)
+(el-get-bundle flycheck-rust)
 
 ;;;------------------------------
 ;;; Interpreter language
