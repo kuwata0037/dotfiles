@@ -14,6 +14,7 @@
   :depends (rust-mode company-mode dash s f)
   (add-hook 'rust-mode-hook #'racer-mode)
   (add-hook 'racer-mode-hook #'eldoc-mode))
+(el-get-bundle cargo)
 
 ;;;------------------------------
 ;;; Interpreter language

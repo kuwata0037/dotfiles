@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((toml-mode :checksum "f6c61817b00f9c4a3cab1bae9c309e0fc45cdd06")
+      '((cargo :checksum "3ecf0b89b3d36874a301a7e2fb429fc026c73f35")
+        (toml-mode :checksum "f6c61817b00f9c4a3cab1bae9c309e0fc45cdd06")
         (racer :checksum "6e0d1b3ebd54497c0cc995a92f09328ff101cd33")
         (f :checksum "3623a4577c89740cfad8d961f3201d3222c79ff6")
         (s :checksum "5e9a6857d42015c67681616aa3519f599f97b8d8")
