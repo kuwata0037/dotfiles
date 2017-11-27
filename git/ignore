@@ -1,4 +1,4 @@
-### https://raw.github.com/github/gitignore/5d896f6791c4257b74696714c66b2530b8d95a51/Global/Linux.gitignore
+### https://raw.github.com/github/gitignore/b3ae3810f8b0f97f24cd61c2d3dd1b5089b91801/Global/Linux.gitignore
 
 *~
 
@@ -15,9 +15,10 @@
 .nfs*
 
 
-### https://raw.github.com/github/gitignore/5d896f6791c4257b74696714c66b2530b8d95a51/Global/macOS.gitignore
+### https://raw.github.com/github/gitignore/b3ae3810f8b0f97f24cd61c2d3dd1b5089b91801/Global/macOS.gitignore
 
-*.DS_Store
+# General
+.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -44,7 +45,7 @@ Temporary Items
 .apdisk
 
 
-### https://raw.github.com/github/gitignore/5d896f6791c4257b74696714c66b2530b8d95a51/Global/Emacs.gitignore
+### https://raw.github.com/github/gitignore/b3ae3810f8b0f97f24cd61c2d3dd1b5089b91801/Global/Emacs.gitignore
 
 # -*- mode: gitignore; -*-
 *~
@@ -93,19 +94,21 @@ flycheck_*.el
 .dir-locals.el
 
 
-### https://raw.github.com/github/gitignore/5d896f6791c4257b74696714c66b2530b8d95a51/Global/Vim.gitignore
+### https://raw.github.com/github/gitignore/b3ae3810f8b0f97f24cd61c2d3dd1b5089b91801/Global/Vim.gitignore
 
-# swap
+# Swap
 [._]*.s[a-v][a-z]
 [._]*.sw[a-p]
 [._]s[a-v][a-z]
 [._]sw[a-p]
-# session
+
+# Session
 Session.vim
-# temporary
+
+# Temporary
 .netrwhist
 *~
-# auto-generated tag files
+# Auto-generated tag files
 tags
 
 
