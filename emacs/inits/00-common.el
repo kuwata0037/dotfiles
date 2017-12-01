@@ -59,6 +59,9 @@
 ;;; Lockfiles
 (setq create-lockfiles nil)
 
+;;; Cookie
+(setq url-cookie-file (my/set-history "cookies"))
+
 ;;; Trash
 (setq delete-by-moving-to-trash t)
 (setq trash-directory "~/.Trash")
