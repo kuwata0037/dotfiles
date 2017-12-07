@@ -20,6 +20,9 @@
         (normal-top-level-add-subdirs-to-load-path))))
 
 ;;; Setup package manager
+;; ELPA
+(defvar package-user-dir my/packages-dir)
+(package-initialize)
 ;; El-get
 (defvar el-get-dir my/packages-dir)
 (unless (require 'el-get nil 'noerror)
