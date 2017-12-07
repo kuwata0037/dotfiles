@@ -36,8 +36,8 @@
 ;;; Documentaion language
 ;;;------------------------------
 ;; HTML, CSS
-(el-get-bundle web-mode)
 (use-package web-mode
+  :init (el-get-bundle web-mode)
   :mode (("\\.html?$"     . web-mode)
          ("\\.phtml$"     . web-mode)
          ("\\.tpl\\.php$" . web-mode)
@@ -75,8 +75,8 @@
      ((t (:foreground "#FF7F00"))))))
 
 ;; Markdown
-(el-get-bundle markdown-mode)
 (use-package markdonw-mode
+  :init (el-get-bundle markdown-mode)
   :mode ("\\.md$" . gfm-mode))
 
 ;;;------------------------------
@@ -89,9 +89,9 @@
 (el-get-bundle toml-mode)
 
 ;;; Yaml
-(el-get-bundle yaml-mode)
 (use-package yaml-mode
-  :mode   ("\\.ya?ml$" . yaml-mode)
+  :init (el-get-bundle yaml-mode)
+  :mode ("\\.ya?ml$" . yaml-mode)
   :config (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent))
 
 ;;; 20-language.el ends here
