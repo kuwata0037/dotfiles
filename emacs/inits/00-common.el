@@ -1,7 +1,3 @@
-;;; 00-common.el
-;;
-;;; Code:
-
 ;;;-------------------------------
 ;;; General
 ;;;-------------------------------
@@ -24,7 +20,7 @@
   :config (setq uniquify-buffer-name-style 'post-forward-angle-brackets))
 
 ;;;-------------------------------
-;;; Coding system
+;;; Coding System
 ;;;------------------------------
 (set-language-environment "Japanese")
 (prefer-coding-system 'utf-8)
@@ -46,7 +42,7 @@
   (concat my/history-dir (mapconcat 'identity args "")))
 
 ;;; Backup
-(add-to-list 'backup-directory-alist  (cons "." (my/set-history "backup/")))
+(add-to-list 'backup-directory-alist (cons "." (my/set-history "backup/")))
 
 ;;; Autosave
 (defvar my/autosave-dir (my/set-history "autosave/"))
@@ -95,5 +91,3 @@
 (el-get-bundle! point-undo
   (global-set-key (kbd "M-]") 'point-undo)
   (global-set-key (kbd "M-[") 'point-redo))
-
-;;; 00-common.el ends here

@@ -1,7 +1,3 @@
-;;; 01-display.el --- Setup display configulation
-;;
-;;; Code:
-
 ;;;------------------------------
 ;;; Startup
 ;;;------------------------------
@@ -90,5 +86,3 @@
 (setq completion-ignore-case t)
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
-
-;;; 01-display.el ends here

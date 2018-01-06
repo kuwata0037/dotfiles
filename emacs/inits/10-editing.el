@@ -1,7 +1,3 @@
-;;; 10-editing.el ---
-;;
-;;; Code:
-
 ;;; Add saved hook
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -145,5 +141,3 @@
       (set-buffer-modified-p nil)
       (kill-buffer htmlize-and-browse-buffer-file-name)
       (shell-command (concat "open " htmlize-and-browse-buffer-file-path)))))
-
-;;; 10-editing.el ends here

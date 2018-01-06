@@ -1,7 +1,3 @@
-;;; 20-language.el --- for each language configulation
-;;
-;;; Code:
-
 ;;;------------------------------
 ;;; Compiler language
 ;;;------------------------------
@@ -93,5 +89,3 @@
   :init (el-get-bundle yaml-mode)
   :mode ("\\.ya?ml$" . yaml-mode)
   :config (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent))
-
-;;; 20-language.el ends here
