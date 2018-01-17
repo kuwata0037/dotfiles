@@ -14,9 +14,6 @@
              (fboundp 'normal-top-level-add-subdirs-to-load-path))
         (normal-top-level-add-subdirs-to-load-path))))
 
-;; ELPA
-(defvar package-user-dir my/packages-dir)
-(package-initialize)
 ;;; Setup package manager
 ;; El-get
 (defvar el-get-dir my/packages-dir)
@@ -26,6 +23,9 @@
        "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
     (goto-char (point-max))
     (eval-print-last-sexp)))
+;; ELPA
+(defvar package-user-dir my/packages-dir)
+(package-initialize)
 ;; El-get plugins
 (el-get-bundle tarao/el-get-lock
   (el-get-lock))
