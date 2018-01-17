@@ -14,10 +14,10 @@
              (fboundp 'normal-top-level-add-subdirs-to-load-path))
         (normal-top-level-add-subdirs-to-load-path))))
 
-;;; Setup package namager
 ;; ELPA
 (defvar package-user-dir my/packages-dir)
 (package-initialize)
+;;; Setup package manager
 ;; El-get
 (defvar el-get-dir my/packages-dir)
 (unless (require 'el-get nil 'noerror)
