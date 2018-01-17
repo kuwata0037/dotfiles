@@ -79,12 +79,4 @@
 (line-number-mode)
 (column-number-mode)
 
-;;--------------------------------------------------
-;; Minibuffer
-;;--------------------------------------------------
-(fset 'yes-or-no-p 'y-or-n-p)
-(setq completion-ignore-case +1)
-(setq read-buffer-completion-ignore-case +1)
-(setq read-file-name-completion-ignore-case +1)
-
 ;;; 01-display.el ends here
