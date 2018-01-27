@@ -242,7 +242,7 @@
 (el-get-bundle! undo-tree
   (global-undo-tree-mode)
   (global-set-key (kbd "C-/") 'undo-tree-undo)
-  (global-set-key (kbd "C-.") 'undo-tree-redo))
+  (global-set-key (kbd "M-/") 'undo-tree-redo))
 (el-get-bundle! point-undo
   (global-set-key (kbd "M-]") 'point-undo)
   (global-set-key (kbd "M-[") 'point-redo))
