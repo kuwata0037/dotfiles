@@ -1,25 +1,28 @@
-;;;------------------------------
-;;; Compiler language
-;;;------------------------------
+;;; 20-language.el --- For each language configulation  -*- lexical-binding: t; -*-
+
+;;--------------------------------------------------
+;; Compiler language
+;;--------------------------------------------------
 ;;; Rust
-(el-get-bundle rust-mode
-  (with-eval-after-load-feature 'rust-mode
-    (setq rust-format-on-save t)))
-(el-get-bundle racer-rust/emacs-racer
-  :name racer
-  :depends (rust-mode company-mode dash s f)
-  (add-hook 'rust-mode-hook #'racer-mode)
-  (add-hook 'racer-mode-hook #'eldoc-mode))
+(use-package rust-mode
+  :init (el-get-bundle rust-mode)
+  :config (setq rust-format-on-save +1))
+(use-package racer
+  :init (el-get-bundle racer-rust/emacs-racer
+          :name racer
+          :depends (rust-mode dash s f pos-tip))
+  :hook ((rust-mode  . racer-mode)
+         (racer-mode . eldoc-mode)))
 (el-get-bundle cargo)
 (el-get-bundle flycheck-rust)
 
-;;;------------------------------
-;;; Interpreter language
-;;;------------------------------
+;;--------------------------------------------------
+;; Interpreter language
+;;--------------------------------------------------
 ;;; Emacs lisp
 (defun my/elisp-mode-hooks ()
   (setq eldoc-idle-delay 0.2)
-  (setq eldoc-echo-area-use-multiline-p t))
+  (setq eldoc-echo-area-use-multiline-p +1))
 (add-hook 'emacs-lisp-mode-hook 'my/elisp-mode-hooks)
 (add-hook 'lisp-interaction-mode-hook 'my/elisp-mode-hooks)
 
@@ -28,10 +31,10 @@
   (add-hook 'fish-mode-hook
             (lambda () (add-hook 'before-save-hook 'fish_indent-before-save))))
 
-;;;------------------------------
-;;; Documentaion language
-;;;------------------------------
-;; HTML, CSS
+;;--------------------------------------------------
+;; Documentaion language
+;;--------------------------------------------------
+;;; HTML, CSS
 (use-package web-mode
   :init (el-get-bundle web-mode)
   :mode (("\\.html?$"     . web-mode)
@@ -70,22 +73,24 @@
    '(web-mode-css-at-rule-face
      ((t (:foreground "#FF7F00"))))))
 
-;; Markdown
-(use-package markdonw-mode
+;;; Markdown
+(use-package markdown-mode
   :init (el-get-bundle markdown-mode)
-  :mode ("\\.md$" . gfm-mode))
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'"       . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode)))
 
-;;;------------------------------
-;;; Configulation language
-;;;------------------------------
-;;; Docker
+;;--------------------------------------------------
+;; Configulation language
+;;--------------------------------------------------
+;;; Dockerfile
 (el-get-bundle dockerfile-mode)
 
 ;;; Toml
 (el-get-bundle toml-mode)
 
-;;; Yaml
-(use-package yaml-mode
-  :init (el-get-bundle yaml-mode)
-  :mode ("\\.ya?ml$" . yaml-mode)
-  :config (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent))
+;;: Yaml
+(el-get-bundle yaml-mode)
+
+;;; 20-language.el ends here
