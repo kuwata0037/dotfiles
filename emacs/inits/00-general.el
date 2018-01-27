@@ -61,7 +61,7 @@
   :config
   ;; general
   (global-company-mode +1)
-  (setq company-idle-delay 0.2)
+  (setq company-idle-delay 0.3)
   (setq company-minimum-prefix-length 3)
   (setq company-selection-wrap-around +1)
   ;; keybind
