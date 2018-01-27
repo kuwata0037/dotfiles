@@ -1,11 +1,9 @@
-;;; 99-utility.el ---
-;;
-;;; Code:
+;;; 99-utility.el --- functions, keybinds and alias  -*- lexical-binding: t; -*-
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Functions
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Information
+;;--------------------------------------------------
+;; Functions
+;;--------------------------------------------------
+;;; Information
 (defun my/font-exists-p (font-name)
   (if (null (x-list-fonts font-name))
       nil t))
@@ -198,23 +196,23 @@
   (if (eq major-mode 'dired-mode)
       (revert-buffer)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Keybind
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(bind-keys :map global-map
-           ("C-a" . my/goto-line-beginning-or-indent)
-           ("C-h" . backward-delete-char)
-           ("C-o" . my/other-window-or-split)
-           ("C-w" . my/killregion-or-deletewindow)
-           ("C-z" . help-command)
-           ("C-S-f" . forward-word)
-           ("C-S-b" . backward-word)
-           ("C-S-v" . cua-scroll-down)
-           ("C-c l" . toggle-truncate-lines))
+;;--------------------------------------------------
+;; Keybind
+;;--------------------------------------------------
+(bind-keys*
+ ("C-a" . my/goto-line-beginning-or-indent)
+ ("C-h" . backward-delete-char)
+ ("C-o" . my/other-window-or-split)
+ ("C-w" . my/killregion-or-deletewindow)
+ ("C-z" . help-command)
+ ("C-S-f" . forward-word)
+ ("C-S-b" . backward-word)
+ ("C-S-v" . cua-scroll-down)
+ ("C-c l" . toggle-truncate-lines))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Alias
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;--------------------------------------------------
+;; Alias
+;;--------------------------------------------------
 (defalias 'dtw 'delete-trailing-whitespace)
 (defalias 'ddl 'delete-duplicate-lines)
 (defalias 'rvr 'reverse-region)
