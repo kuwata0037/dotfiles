@@ -104,7 +104,8 @@
   (defun my/flycheck-cpp-language ()
     (setq flycheck-gcc-language-standard   "c++1y")
     (setq flycheck-clang-language-standard "c++1y"))
-  (add-hook 'c++-mode-hook 'my/flycheck-cpp-language))
+  (add-hook 'c++-mode-hook 'my/flycheck-cpp-language)
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
 ;;; Execution
 (use-package quickrun
