@@ -84,6 +84,9 @@
 ;;--------------------------------------------------
 ;; Configulation language
 ;;--------------------------------------------------
+;;; CMake
+(el-get-bundle cmake-mode)
+
 ;;; Dockerfile
 (el-get-bundle dockerfile-mode)
 
