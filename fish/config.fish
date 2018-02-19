@@ -4,6 +4,9 @@ if status --is-login
     ##### locale #####
     set -gx LANG en_US.UTF-8
 
+    ##### term #####
+    set -gx TERM xterm-256color
+
     ##### path #####
     set -l local_paths /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
@@ -12,9 +15,6 @@ if status --is-login
     if test -d $GOPATH/bin
         set local_paths $GOPATH/bin $local_paths
     end
-
-    # ghq
-    set -gx GHQ_ROOT ~/dev/src
 
     # rust
     if test -d ~/.cargo/bin
@@ -41,7 +41,7 @@ if status --is-login
     set -g fish_user_paths $local_paths
 
     ##### misc #####
-    set -gx TERM xterm-256color
+    set -gx GHQ_ROOT ~/dev/src
     set -gx TMUX_PLUGIN_MANAGER_PATH ~/.config/tmux/plugins/
 end
 
