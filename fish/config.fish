@@ -25,18 +25,16 @@ if status --is-login
     if test -d ~/.pyenv/bin
         set local_paths ~/.pyenv/bin $local_paths
     end
-    if which pyenv >/dev/null
+    if test -d ~/.pyenv/shims
         set local_paths ~/.pyenv/shims $local_paths
-        source (pyenv init - | psub)
     end
 
     # rbenv
     if test -d ~/.rbenv/bin
         set local_paths ~/.rbenv/bin $local_paths
     end
-    if which rbenv >/dev/null
+    if test -d ~/.rbenv/shims
         set local_paths ~/.rbenv/shims $local_paths
-        source (rbenv init - | psub)
     end
 
     # update PATH via fish_user_paths
