@@ -1,52 +1,56 @@
 ########## env ##########
 
 if status --is-login
-    ### locale ###
+    ##### locale #####
     set -gx LANG en_US.UTF-8
 
-    ### path ###
-    set -g fish_user_paths /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
-
-    # for rust
-    if test -d $HOME/.cargo/bin
-        set fish_user_paths $HOME/.cargo/bin $fish_user_paths
-    end
-
-    # for go
-    if test (which go)
-        set -gx GOPATH $HOME/dev
-
-        test -d $GOPATH/bin
-        and set -g fish_user_paths $GOPATH/bin $fish_user_paths
-    end
-
-    set -gx GHQ_ROOT $GOPATH/src
-
-    # for pyenv
-    if test -d $HOME/.pyenv/bin
-        set fish_user_paths $HOME/.pyenv/bin $fish_user_paths
-        source (pyenv init - | psub)
-    end
-
-    # for rbenv
-    if test -d $HOME/.rbenv/bin
-        set fish_user_paths $HOME/.rbenv/bin $fish_user_paths
-        source (rbenv init - | psub)
-    end
-
-    ### misc ###
+    ##### term #####
     set -gx TERM xterm-256color
 
-    # for tpm
-    set -gx TMUX_PLUGIN_MANAGER_PATH $HOME/.config/tmux/plugins/
+    ##### path #####
+    set -l local_paths /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+
+    # go
+    set -gx GOPATH $HOME/dev
+    if test -d $GOPATH/bin
+        set local_paths $GOPATH/bin $local_paths
+    end
+
+    # rust
+    if test -d ~/.cargo/bin
+        set local_paths ~/.cargo/bin $local_paths
+    end
+
+    # pyenv
+    if test -d ~/.pyenv/bin
+        set local_paths ~/.pyenv/bin $local_paths
+    end
+    if test -d ~/.pyenv/shims
+        set local_paths ~/.pyenv/shims $local_paths
+    end
+
+    # rbenv
+    if test -d ~/.rbenv/bin
+        set local_paths ~/.rbenv/bin $local_paths
+    end
+    if test -d ~/.rbenv/shims
+        set local_paths ~/.rbenv/shims $local_paths
+    end
+
+    # update PATH via fish_user_paths
+    set -g fish_user_paths $local_paths
+
+    ##### misc #####
+    set -gx GHQ_ROOT ~/dev/src
+    set -gx TMUX_PLUGIN_MANAGER_PATH ~/.config/tmux/plugins/
 end
 
 ########## alias ##########
 
-alias e='emacsclient -nw -a ""'
-alias ekill='emacsclient -e "(kill-emacs)"'
-alias g='git'
-alias fzf='fzf-tmux'
+alias e 'emacsclient -nw -a ""'
+alias ekill 'emacsclient -e "(kill-emacs)"'
+alias g 'git'
+alias fzf 'fzf-tmux'
 
 ########## plugins ##########
 
