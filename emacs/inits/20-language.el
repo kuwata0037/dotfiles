@@ -81,6 +81,10 @@
          ("\\.md\\'"       . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)))
 
+;;; Doxygen
+(use-package doxymacs
+  :hook (c-mode-common . doxymacs-mode))
+
 ;;--------------------------------------------------
 ;; Configulation language
 ;;--------------------------------------------------
