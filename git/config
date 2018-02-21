@@ -33,6 +33,10 @@
 	# checkout
 	ch = checkout
 	cb = checkout -b
+	# stash
+	ss = stash save
+	sp = stash pop
+	sl = stash list
 	# diff
 	dd = diff
 	ds = diff --staged
