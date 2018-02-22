@@ -48,8 +48,8 @@
 	# status
 	st = status -bs
 	# log
+	one = log --oneline
 	ls  = log --stat --pretty=short
-	one = log --pretty=oneline
 	gg  = log --graph --decorate --oneline
 	ga  = log --graph --all --decorate --oneline
 	# fetch
