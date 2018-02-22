@@ -52,6 +52,7 @@
 	ls  = log --stat --pretty=short
 	ll  = log --graph --date-order --pretty=changelog
 	la  = log --graph --date-order --pretty=changelog --all
+	today = log --graph --since=yesterday --date-order --date=relative --format=format:'%C(yellow)%h %C(green)[%ar] %C(reset)%s %C(red)%d %C(reset)'
 	# fetch
 	fh = fetch --prune
 	# pull
