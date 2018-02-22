@@ -33,6 +33,9 @@
 	# checkout
 	ch = checkout
 	cb = checkout -b
+	# reset
+	re = reset
+	rh = reset --hard
 	# stash
 	ss = stash save
 	sp = stash pop
