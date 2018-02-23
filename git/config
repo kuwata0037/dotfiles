@@ -50,6 +50,8 @@
 	dw = diff --color-words
 	# status
 	st = status -bs
+	# show
+	sh = show
 	# log
 	one = log --oneline
 	ls  = log --stat --pretty=short
