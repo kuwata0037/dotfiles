@@ -12,7 +12,8 @@
 [merge]
 	ff = false
 [alias]
-	alias = !git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+	alias = "!git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort"
+	ig    = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	# add
 	aa = add -A
 	au = add -u :/
@@ -32,6 +33,13 @@
 	# checkout
 	ch = checkout
 	cb = checkout -b
+	# reset
+	re = reset
+	rh = reset --hard
+	# stash
+	ss = stash save
+	sp = stash pop
+	sl = stash list
 	# diff
 	dd = diff
 	ds = diff --staged
@@ -42,12 +50,18 @@
 	dw = diff --color-words
 	# status
 	st = status -bs
+	# show
+	sh = show
 	# log
+	one = log --oneline
 	ls  = log --stat --pretty=short
-	one = log --pretty=oneline
-	gg  = log --graph --decorate --oneline
-	ga  = log --graph --all --decorate --oneline
+	ll  = log --graph --date-order --pretty=changelog
+	la  = log --graph --date-order --pretty=changelog --all
+	# push
+	pu = push -u origin
 	# fetch
 	fh = fetch --prune
 	# pull
 	pl = pull
+[pretty]
+	changelog=format:%x09%C(yellow)%<(9,trunc)%H %C(green)%>(13)[%ar] %C(auto)%s %C(auto)%d
