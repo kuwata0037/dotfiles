@@ -88,7 +88,7 @@
 
 ;;; Doxygen
 (use-package doxymacs
-  :hook (c-mode-common . doxymacs-mode))
+  :config (add-hook 'c-mode-common-hook 'doxymacs-mode))
 
 ;;--------------------------------------------------
 ;; Configulation language
