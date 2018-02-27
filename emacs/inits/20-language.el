@@ -3,6 +3,11 @@
 ;;--------------------------------------------------
 ;; Compiler language
 ;;--------------------------------------------------
+;;; C++
+(use-package google-c-style
+  :init (el-get-bundle google-c-style)
+  :hook ((c-mode c++-mode) . google-set-c-style))
+
 ;;; Rust
 (use-package rust-mode
   :init (el-get-bundle rust-mode)
