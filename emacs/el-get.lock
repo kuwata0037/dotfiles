@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((cmake-mode :checksum "2b6ba21f26e1d6004db9940a5daf06f14571b432")
+      '((google-c-style :checksum "e1157c50a795c6d54c6aa36ff0352d173d067957")
+        (cmake-mode :checksum "2b6ba21f26e1d6004db9940a5daf06f14571b432")
         (init-loader :checksum "5d3cea1004c11ff96b33020e337b03b925c67c42")
         (yaml-mode :checksum "28c34033194130d452d5c958b5241c88d42ca02b")
         (toml-mode :checksum "f6c61817b00f9c4a3cab1bae9c309e0fc45cdd06")
