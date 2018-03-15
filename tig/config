@@ -1,0 +1,17 @@
+#
+# Settings
+#
+set main-view    = id date author commit-title:yes,graph,refs
+set diff-options = -m --first-parent
+set ignore-case  = true
+
+#
+# User-defined commands
+#
+bind main   !   ?git revert %(commit)
+bind diff   !   ?git revert %(commit)
+bind main   I   ?git rebase -i %(commit)
+bind diff   I   ?git rebase -i %(commit)
+bind main   T   ?git tag "%(prompt Enter tag name: )" %(commit)
+bind diff   T   ?git tag "%(prompt Enter tag name: )" %(commit)
+bind refs   T   ?git tag "%(prompt Enter tag name: )" %(branch)
