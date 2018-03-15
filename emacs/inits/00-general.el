@@ -244,7 +244,7 @@
   (global-undo-tree-mode)
   (global-set-key (kbd "C-/") 'undo-tree-undo)
   (global-set-key (kbd "M-/") 'undo-tree-redo))
-(el-get-bundle! point-undo
+(el-get-bundle! emacswiki:point-undo
   (global-set-key (kbd "M-]") 'point-undo)
   (global-set-key (kbd "M-[") 'point-redo))
 
