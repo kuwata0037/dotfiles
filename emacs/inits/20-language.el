@@ -7,6 +7,13 @@
 (use-package google-c-style
   :init (el-get-bundle google-c-style)
   :hook ((c-mode c++-mode) . google-set-c-style))
+(use-package clang-format
+  :if (executable-find "clang-format")
+  :init
+  (el-get-bundle clang-format)
+  (defun my/clang-format-hooks ()
+    (bind-keys :map c-mode-base-map ("C-c C-f" . clang-format-buffer)))
+  :hook (c-mode-common . my/clang-format-hooks))
 
 ;;; Rust
 (use-package rust-mode
