@@ -48,9 +48,17 @@
   :init (el-get-bundle rainbow-delimiters)
   :hook (prog-mode . rainbow-delimiters-mode))
 
-;;; Trailing whitespace
-(setq-default show-trailing-whitespace +1)
-(set-face-background 'trailing-whitespace "#B14770")
+;;; Whitespaces
+(use-package whitespace
+  :config
+  (setq whitespace-style '(face trailing tabs space tab-mark))
+  (setq whitespace-space-regexp "\\(\u3000+\\)")
+  (set-face-attribute 'whitespace-trailing nil
+                      :background "#B14770")
+  (set-face-attribute 'whitespace-tab nil
+                      :foreground "LightSkyblue"
+                      :underline t)
+  (global-whitespace-mode))
 
 ;;; Difference
 (use-package volatile-highlights
