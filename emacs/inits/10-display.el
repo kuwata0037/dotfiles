@@ -72,7 +72,9 @@
 ;;; Indent
 (use-package indent-guide
   :init (el-get-bundle indent-guide)
-  :hook (prog-mode . indent-guide-mode))
+  :hook (prog-mode . indent-guide-mode)
+  :config
+  (setq indent-guide-delay 0.1))
 
 ;;--------------------------------------------------
 ;; Frame
