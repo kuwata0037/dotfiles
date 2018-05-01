@@ -69,6 +69,11 @@
   (vhl/define-extension 'undo-tree 'undo-tree-yank 'undo-tree-move)
   (vhl/install-extension 'undo-tree))
 
+;;; Indent
+(use-package indent-guide
+  :init (el-get-bundle indent-guide)
+  :hook (prog-mode . indent-guide-mode))
+
 ;;--------------------------------------------------
 ;; Frame
 ;;--------------------------------------------------
