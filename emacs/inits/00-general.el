@@ -256,6 +256,9 @@
 (global-auto-revert-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+(use-package real-auto-save
+  :init (el-get-bundle chillaranand/real-auto-save)
+  :hook (prog-mode . real-auto-save-mode))
 (use-package uniquify
   :config (setq uniquify-buffer-name-style 'post-forward-angle-brackets))
 
