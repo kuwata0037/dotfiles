@@ -19,7 +19,6 @@
         (volatile-highlights :checksum "9a20091f0ce7fc0a6b3e641a6a46d5f3ac4d8392")
         (rainbow-delimiters :checksum "19b93892afa0494ba749c2ca9c154e04447ad778")
         (highlight-symbol :checksum "7a789c779648c55b16e43278e51be5898c121b3a")
-        (real-auto-save :checksum "d813632c1e754539cc92953ac4c3609105f9af58")
         (point-undo :checksum "b09bdcc64a0de08bae0838ef708c679dbc08f4c2")
         (undo-tree :checksum "e9a9102f515acd7523158f20e83f300600374989")
         (undohist :checksum "d2239a5f736724ceb9e3b6bcaa86f4064805cda0")
