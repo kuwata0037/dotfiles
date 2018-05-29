@@ -204,6 +204,12 @@
       (concat my/autosave-dir ".saves-"))
 (setq auto-save-timeout  15)
 (setq auto-save-interval 60)
+(use-package super-save
+  :init (el-get-bundle bbatsov/super-save)
+  :config
+  (setq super-save-auto-save-when-idle +1)
+  (setq super-save-idle-duration 10)
+  (super-save-mode))
 
 ;;; Backup
 (add-to-list 'backup-directory-alist (cons "." (my/set-history "backup/")))
