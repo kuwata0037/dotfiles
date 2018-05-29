@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((init-loader :checksum "5d3cea1004c11ff96b33020e337b03b925c67c42")
+      '((super-save :checksum "1c8fbd5e18277e4af0ada2678a854b1c9072db38")
+        (init-loader :checksum "5d3cea1004c11ff96b33020e337b03b925c67c42")
         (yaml-mode :checksum "40067a10ac1360f0b9533f0bbbb2eea128e2574d")
         (toml-mode :checksum "f6c61817b00f9c4a3cab1bae9c309e0fc45cdd06")
         (dockerfile-mode :checksum "818e6946fcf2d58438ab78ea06761a372cc5435a")
