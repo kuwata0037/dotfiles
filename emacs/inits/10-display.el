@@ -94,10 +94,5 @@
 ;;; Mode line
 (line-number-mode)
 (column-number-mode)
-(use-package smart-mode-line
-  :init (el-get-bundle smart-mode-line)
-  :config
-  (setq sml/no-confirm-load-theme +1)
-  (sml/setup))
 
 ;;; 01-display.el ends here
