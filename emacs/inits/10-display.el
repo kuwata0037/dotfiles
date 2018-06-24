@@ -94,5 +94,8 @@
 ;;; Mode line
 (line-number-mode)
 (column-number-mode)
+(use-package spaceline-config
+  :init (el-get-bundle spaceline)
+  :config (spaceline-spacemacs-theme))
 
 ;;; 01-display.el ends here
