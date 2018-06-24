@@ -162,7 +162,7 @@
       (format "%d lines,%d chars "
               (count-lines (region-beginning) (region-end))
               (- (region-end) (region-beginning)))))
-(add-to-list 'mode-line-format '(:eval (my/count-lines-and-chars)))
+(add-to-list 'mode-line-front-space '(:eval (my/count-lines-and-chars)))
 
 (defun my/other-window-or-split ()
   (interactive)
