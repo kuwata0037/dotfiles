@@ -60,6 +60,7 @@
 (add-to-list 'electric-pair-pairs '(?{ . ?}))
 ;; for text
 (use-package company
+  :diminish
   :init (el-get-bundle company-mode)
   :config
   ;; general
@@ -101,6 +102,7 @@
 
 ;;; Syntax check
 (use-package flycheck
+  :diminish
   :init (el-get-bundle flycheck)
   :config
   (global-flycheck-mode)
@@ -208,6 +210,7 @@
 (setq auto-save-timeout  15)
 (setq auto-save-interval 60)
 (use-package super-save
+  :diminish
   :init (el-get-bundle bbatsov/super-save)
   :config
   (setq super-save-auto-save-when-idle +1)

@@ -37,6 +37,7 @@
 
 ;;; Symbol
 (use-package highlight-symbol
+  :diminish
   :init (el-get-bundle highlight-symbol)
   :hook (prog-mode . highlight-symbol-mode)
   :config (setq highlight-symbol-idle-delay 0.5))
@@ -50,6 +51,7 @@
 
 ;;; Whitespaces
 (use-package whitespace
+  :diminish
   :config
   (setq whitespace-style '(face trailing tabs space tab-mark))
   (setq whitespace-space-regexp "\\(\u3000+\\)")
@@ -62,6 +64,7 @@
 
 ;;; Difference
 (use-package volatile-highlights
+  :diminish
   :init (el-get-bundle volatile-highlights)
   :config
   (volatile-highlights-mode)
@@ -71,6 +74,7 @@
 
 ;;; Indent
 (use-package indent-guide
+  :diminish
   :init (el-get-bundle indent-guide)
   :hook (prog-mode . indent-guide-mode)
   :config
