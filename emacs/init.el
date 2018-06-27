@@ -33,6 +33,7 @@
 
 ;;; Setup advanced require package macro
 (el-get-bundle use-package)
+(el-get-bundle diminish)
 
 ;;; Load init files
 (el-get-bundle! init-loader

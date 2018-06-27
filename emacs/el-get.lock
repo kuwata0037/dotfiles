@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((spaceline :checksum "0fb964d96c15b18e77f1d91923645777b66ff534")
+      '((diminish :checksum "73669b69e5f9a0c9261c5b53624329d0e24d1ed8")
+        (spaceline :checksum "0fb964d96c15b18e77f1d91923645777b66ff534")
         (powerline :checksum "af5ef31a33c3589a9be0b2a55a2741582e605efd")
         (expand-region :checksum "f99b7630efcdb47c9c6182489c55fba3bcaee521")
         (super-save :checksum "1c8fbd5e18277e4af0ada2678a854b1c9072db38")
