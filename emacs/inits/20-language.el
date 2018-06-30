@@ -112,4 +112,7 @@
 ;;: Yaml
 (el-get-bundle yaml-mode)
 
+;;; Etc
+(use-package generic-x)
+
 ;;; 20-language.el ends here
