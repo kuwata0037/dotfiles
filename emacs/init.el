@@ -29,7 +29,7 @@
 ;; El-get plugins
 (el-get-bundle tarao/el-get-lock
   (el-get-lock)
-  (el-get-lock-unlock 'clang-format))
+  (el-get-lock-unlock 'clang-format 'cmake-mode))
 
 ;;; Setup advanced require package macro
 (el-get-bundle use-package)
