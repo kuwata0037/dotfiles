@@ -8,7 +8,6 @@
         (yaml-mode :checksum "40067a10ac1360f0b9533f0bbbb2eea128e2574d")
         (toml-mode :checksum "f6c61817b00f9c4a3cab1bae9c309e0fc45cdd06")
         (dockerfile-mode :checksum "818e6946fcf2d58438ab78ea06761a372cc5435a")
-        (cmake-mode :checksum "2b6ba21f26e1d6004db9940a5daf06f14571b432")
         (markdown-mode :checksum "4f9c5e24aec582ed3413a8165ec0d613e71b7430")
         (web-mode :checksum "3d42ceaec60623c0b2fba7456f984e7a2cf6c5af")
         (emacs-fish :checksum "bac709ac1235751952d6022dddc6307d9135d096")
@@ -46,4 +45,4 @@
         (el-get-lock :checksum "df8cfe55441695865a64b97946750b6413a40425")))
 (setq el-get-lock-locked-packages 'nil)
 (setq el-get-lock-unlocked-packages
-      '(clang-format))
+      '(cmake-mode clang-format))
