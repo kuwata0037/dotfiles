@@ -54,8 +54,9 @@ alias fzf 'fzf-tmux'
 
 ########## plugins ##########
 
-if not test -f ~/.config/fish/functions/fisher.fish
-    echo "Installing fisherman for the first time"
-    curl -sLo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-    fisher
+if not functions -q fisher
+    set -q XDG_CONFIG_HOME
+    or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
 end
