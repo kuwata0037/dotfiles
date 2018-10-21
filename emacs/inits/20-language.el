@@ -103,8 +103,10 @@
 ;;; CMake
 (el-get-bundle cmake-mode)
 
-;;; Dockerfile
+;;; Docker
 (el-get-bundle dockerfile-mode)
+(use-package docker-compose-mode
+  :init (el-get-bundle meqif/docker-compose-mode))
 
 ;;; Toml
 (el-get-bundle toml-mode)
