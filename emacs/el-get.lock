@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((el-get :checksum "76660c1a636b4a929aa64d828a286ddc68d3a545")
+      '((docker-compose-mode :checksum "c9f131d2c90d652435d407fd36c40feebfed1dad")
+        (el-get :checksum "76660c1a636b4a929aa64d828a286ddc68d3a545")
         (treepy :checksum "b40e6b09eb9be45da67b8c9e4990a5a0d7a2a09d")
         (graphql :checksum "e2b309689f4faf9225f290080f836e988c5a576d")
         (diminish :checksum "73669b69e5f9a0c9261c5b53624329d0e24d1ed8")
