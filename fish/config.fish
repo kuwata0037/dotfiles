@@ -40,7 +40,7 @@ end
 set -g fish_user_paths $local_paths
 
 ##### misc #####
-set -gx GHQ_ROOT ~/dev/src
+set -gx GHQ_ROOT $GOPATH/src
 set -gx TMUX_PLUGIN_MANAGER_PATH ~/.config/tmux/plugins/
 
 
