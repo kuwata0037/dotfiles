@@ -101,5 +101,12 @@
 (use-package spaceline-config
   :init (el-get-bundle spaceline)
   :config (spaceline-spacemacs-theme))
+(use-package anzu
+  :diminish
+  :init (el-get-bundle anzu)
+  :config
+  (global-anzu-mode)
+  (setq anzu-cons-mode-line-p nil)
+  (setq anzu-search-threshold 1000))
 
 ;;; 10-display.el ends here
