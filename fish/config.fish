@@ -11,30 +11,18 @@ set -l local_paths /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
 # go
 set -gx GOPATH $HOME/dev
-if test -d $GOPATH/bin
-    set local_paths $GOPATH/bin $local_paths
-end
+set local_paths $GOPATH/bin $local_paths
 
 # rust
-if test -d ~/.cargo/bin
-    set local_paths ~/.cargo/bin $local_paths
-end
+set local_paths ~/.cargo/bin $local_paths
 
 # pyenv
-if test -d ~/.pyenv/bin
-    set local_paths ~/.pyenv/bin $local_paths
-end
-if test -d ~/.pyenv/shims
-    set local_paths ~/.pyenv/shims $local_paths
-end
+set local_paths ~/.pyenv/bin $local_paths
+set local_paths ~/.pyenv/shims $local_paths
 
 # rbenv
-if test -d ~/.rbenv/bin
-    set local_paths ~/.rbenv/bin $local_paths
-end
-if test -d ~/.rbenv/shims
-    set local_paths ~/.rbenv/shims $local_paths
-end
+set local_paths ~/.rbenv/bin $local_paths
+set local_paths ~/.rbenv/shims $local_paths
 
 # update PATH via fish_user_paths
 set -g fish_user_paths $local_paths
