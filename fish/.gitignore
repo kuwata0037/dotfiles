@@ -1,5 +1,5 @@
 ### My Fish.gitignore
-fishd*
+fish_variables
 completions/
 conf.d/
 functions/
