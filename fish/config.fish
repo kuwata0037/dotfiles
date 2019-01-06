@@ -1,5 +1,9 @@
 ########## env ##########
 
+##### xdg #####
+set -q XDG_CONFIG_HOME
+or set -l XDG_CONFIG_HOME ~/.config
+
 ##### locale #####
 set -gx LANG en_US.UTF-8
 
@@ -27,7 +31,7 @@ set -g fish_user_paths $local_paths
 
 ##### misc #####
 set -gx GHQ_ROOT $GOPATH/src
-set -gx TMUX_PLUGIN_MANAGER_PATH ~/.config/tmux/plugins/
+set -gx TMUX_PLUGIN_MANAGER_PATH $XDG_CONFIG_HOME/tmux/plugins/
 
 
 ########## alias ##########
@@ -41,8 +45,6 @@ alias fzf 'fzf-tmux'
 ########## plugins ##########
 
 if not functions -q fisher
-    set -q XDG_CONFIG_HOME
-    or set XDG_CONFIG_HOME ~/.config
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
 end
