@@ -7,7 +7,7 @@ set -gx LANG en_US.UTF-8
 set -gx TERM xterm-256color
 
 ##### path #####
-set -l local_paths /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+set -l local_paths /usr/local/{sbin,bin} /usr/{sbin,bin} /{sbin,bin}
 
 # go
 set -gx GOPATH $HOME/dev
@@ -17,12 +17,10 @@ set local_paths $GOPATH/bin $local_paths
 set local_paths ~/.cargo/bin $local_paths
 
 # pyenv
-set local_paths ~/.pyenv/bin $local_paths
-set local_paths ~/.pyenv/shims $local_paths
+set local_paths ~/.pyenv/{bin,shims} $local_paths
 
 # rbenv
-set local_paths ~/.rbenv/bin $local_paths
-set local_paths ~/.rbenv/shims $local_paths
+set local_paths ~/.rbenv/{bin,shims} $local_paths
 
 # update PATH via fish_user_paths
 set -g fish_user_paths $local_paths
