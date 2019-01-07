@@ -24,10 +24,8 @@ set local_paths $GOPATH/bin $local_paths
 ## rust
 set local_paths ~/.cargo/bin $local_paths
 
-## pyenv
+## **env
 set local_paths ~/.pyenv/{bin,shims} $local_paths
-
-## rbenv
 set local_paths ~/.rbenv/{bin,shims} $local_paths
 
 ## update PATH via fish_user_paths
