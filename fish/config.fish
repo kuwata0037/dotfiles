@@ -1,3 +1,11 @@
+########## alias ##########
+
+alias e 'emacsclient -nw -a ""'
+alias ekill 'emacsclient -e "(kill-emacs)"'
+alias g 'git'
+alias fzf 'fzf-tmux'
+
+
 ########## env ##########
 
 ##### xdg #####
@@ -28,14 +36,6 @@ set -gx LANG en_US.UTF-8
 set -gx TERM xterm-256color
 set -gx GHQ_ROOT $GOPATH/src
 set -gx TMUX_PLUGIN_MANAGER_PATH $XDG_CONFIG_HOME/tmux/plugins/
-
-
-########## alias ##########
-
-alias e 'emacsclient -nw -a ""'
-alias ekill 'emacsclient -e "(kill-emacs)"'
-alias g 'git'
-alias fzf 'fzf-tmux'
 
 
 ########## plugins ##########
