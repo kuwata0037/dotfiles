@@ -4,12 +4,6 @@
 set -q XDG_CONFIG_HOME
 or set -l XDG_CONFIG_HOME ~/.config
 
-##### locale #####
-set -gx LANG en_US.UTF-8
-
-##### term #####
-set -gx TERM xterm-256color
-
 ##### path #####
 set -l local_paths /usr/local/{sbin,bin} /usr/{sbin,bin} /{sbin,bin}
 
@@ -30,6 +24,8 @@ set local_paths ~/.rbenv/{bin,shims} $local_paths
 set -g fish_user_paths $local_paths
 
 ##### misc #####
+set -gx LANG en_US.UTF-8
+set -gx TERM xterm-256color
 set -gx GHQ_ROOT $GOPATH/src
 set -gx TMUX_PLUGIN_MANAGER_PATH $XDG_CONFIG_HOME/tmux/plugins/
 
