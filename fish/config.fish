@@ -37,6 +37,8 @@ set -gx TERM xterm-256color
 set -gx GHQ_ROOT $GOPATH/src
 set -gx TMUX_PLUGIN_MANAGER_PATH $XDG_CONFIG_HOME/tmux/plugins/
 set -gx FZF_DEFAULT_OPTS '--cycle --reverse --bind "?:toggle-preview"'
+set -gx FZF_CD_OPTS '--preview "tree -C {} | head -n100"'
+set -gx FZF_CD_WITH_HIDDEN_OPTS $FZF_CD_OPTS
 
 
 ########################################
