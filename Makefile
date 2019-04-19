@@ -8,7 +8,7 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 all: help
 
 .PHONY: deploy
-deploy: clean ## Create symlink of dot files
+deploy: clean ## Create symlink of dotfiles to $HOME
 	@echo '==> Start to deploy dotfiles.'
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(CONFPATH);)
 	@ln -sfnv $(DOTPATH)/emacs $(HOME)/.emacs.d
@@ -16,7 +16,7 @@ deploy: clean ## Create symlink of dot files
 	@ln -sfnv $(DOTPATH)/tmux/tmux.conf $(HOME)/.tmux.conf
 
 .PHONY: clean
-clean: ## Remove the dot files
+clean: ## Remove the dotfiles from $HOME
 	@echo '==> Remove dotfiles.'
 	@-$(foreach val, $(DOTFILES), rm -vrf $(CONFPATH)/$(notdir $(val));)
 	@-rm -vrf $(HOME)/.emacs.d
