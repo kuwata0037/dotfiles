@@ -1,10 +1,6 @@
 abaez/fish-rustup
 decors/fish-ghq
-fisherman/await
 fisherman/fzf
-fisherman/get
-fisherman/getopts
-fisherman/last_job_id
 fisherman/pyenv
 fisherman/rbenv
 oh-my-fish/plugin-extract
