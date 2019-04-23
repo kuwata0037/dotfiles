@@ -244,6 +244,9 @@
 ;;; Cookie
 (setq url-cookie-file (my/set-history "cookies"))
 
+;;; Transient
+(setq transient-history-file (my/set-history "transient"))
+
 ;;; Trash
 (setq delete-by-moving-to-trash +1)
 (setq trash-directory "~/.Trash")
