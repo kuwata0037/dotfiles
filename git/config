@@ -12,23 +12,20 @@
 [merge]
 	ff = false
 [alias]
-	alias = "!git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort"
-	ig    = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+	alias   = "!git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort"
+	ig      = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	refresh = "!git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I {} git branch -d {}"
 	# add
+	ad = add
 	aa = add -A
 	au = add -u :/
-	ap = add -p
 	# commit
-	c   = commit
+	co  = commit
 	ca  = commit -a
 	cm  = commit -m
-	cam = commit -am
 	cd  = commit --amend
-	cad = commit -a --amend
 	# branch
 	br = branch -vv
-	ba = branch -avv
 	bn = branch -avv --no-merged
 	bd = branch -d
 	# checkout
@@ -44,11 +41,6 @@
 	# diff
 	dd = diff
 	ds = diff --staged
-	dh = diff HEAD
-	d1 = diff HEAD~
-	d2 = diff HEAD~2
-	d3 = diff HEAD~3
-	dw = diff --color-words
 	# status
 	st = status -bs
 	# show
