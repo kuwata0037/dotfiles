@@ -1,1 +1,8 @@
-# dotfiles
+dotfiles
+========
+
+## Setup
+
+``` shell
+$ make deploy
+```
