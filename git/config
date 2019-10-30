@@ -16,10 +16,11 @@
 	ig      = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	refresh = "!git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I {} git branch -d {}"
 	# add
+	ad = add
 	aa = add -A
 	au = add -u :/
 	# commit
-	c   = commit
+	co  = commit
 	ca  = commit -a
 	cm  = commit -m
 	cd  = commit --amend
