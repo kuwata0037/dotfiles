@@ -23,6 +23,11 @@ clean: ## Remove the dotfiles from $HOME
 	@-rm -vrf $(HOME)/.zshenv
 	@-rm -vrf $(HOME)/.tmux.conf
 
+.PHONY: ignore
+ignore: ## Update git ignore file
+	@echo '==> Update git ignore.'
+	@gibo dump Linux macOS Emacs Vim JetBrains VisualStudioCode > $(DOTPATH)/git/ignore
+
 .PHONY: help
 help: ## Show self-documented Makefile
 	@echo 'Usage: make [target]'
