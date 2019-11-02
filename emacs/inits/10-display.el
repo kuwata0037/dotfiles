@@ -27,7 +27,7 @@
 ;;; Current line
 (defface my/hl-line-face
   '((((class color) (background dark))
-     (:background "NavyBlue" +1))
+     (:background "MidnightBlue" +1))
     (((class color) (background light))
      (:background "LightGoldenrodYellow" +1))
     (t (:bold +1)))
