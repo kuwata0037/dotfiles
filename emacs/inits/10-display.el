@@ -33,7 +33,7 @@
     (t (:bold +1)))
   "hl-line's my face")
 (setq hl-line-face 'my/hl-line-face)
-(global-hl-line-mode -1)
+(global-hl-line-mode +1)
 
 ;;; Symbol
 (use-package highlight-symbol
