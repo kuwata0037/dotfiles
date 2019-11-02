@@ -27,13 +27,13 @@
 ;;; Current line
 (defface my/hl-line-face
   '((((class color) (background dark))
-     (:background "NavyBlue" +1))
+     (:background "MidnightBlue" +1))
     (((class color) (background light))
      (:background "LightGoldenrodYellow" +1))
     (t (:bold +1)))
   "hl-line's my face")
 (setq hl-line-face 'my/hl-line-face)
-(global-hl-line-mode -1)
+(global-hl-line-mode +1)
 
 ;;; Symbol
 (use-package highlight-symbol
