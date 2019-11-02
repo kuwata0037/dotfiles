@@ -85,7 +85,6 @@
 ;; Frame
 ;;--------------------------------------------------
 ;;; Bar
-(setq frame-title-format (format "%%f - Emacs@%s" (system-name)))
 (menu-bar-mode -1)
 (when window-system
   (tool-bar-mode   -1)
