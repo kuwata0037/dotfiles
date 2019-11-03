@@ -20,9 +20,6 @@
 
 ;;; Color theme
 (load-theme 'wombat +1)
-;; (el-get-bundle! badwolf-theme
-;;   :type github
-;;   :pkgname "bkruczyk/badwolf-emacs")
 
 ;;; Current line
 (defface my/hl-line-face
