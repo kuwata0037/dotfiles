@@ -4,10 +4,6 @@
 ;; Functions
 ;;--------------------------------------------------
 ;;; Information
-(defun my/font-exists-p (font-name)
-  (if (null (x-list-fonts font-name))
-      nil t))
-
 (defun my/get-current-path ()
   (interactive)
   (or (buffer-file-name) (expand-file-name default-directory)))
@@ -25,30 +21,9 @@
         (message (format "%s" face))
       (message "no face"))))
 
-(defun my/get-cursor-color ()
-  (car (cl-loop for (k . v) in (frame-parameters)
-                if (eq k 'cursor-color)
-                collect  v)))
-
 (defun my/get-background-color ()
   (interactive)
   (princ (face-attribute 'default :background)))
-
-(defun my/get-overlay-property-cons-list-at (&optional position)
-  (interactive)
-  (or position (setq position (point)))
-  (let (list ov)
-    (setq ov (overlay-properties (car (overlays-in position (1+ position)))))
-    (mapc (lambda (elt)
-            (let ((key   (car elt))
-                  (value (cdr elt)))
-              (setq list (cons (cons key value) list))))
-          (let (ret)
-            (while ov
-              (setq ret (cons (cons (car ov) (cadr ov)) ret))
-              (setq ov  (cddr ov)))
-            ret))
-    (message "%s" list)))
 
 ;;; Replace
 (defun my/replace-strings-in-region-by-list (list)
@@ -95,21 +70,6 @@
      ("９" . "9")
      ("０" . "0"))))
 
-(defun my/convert-to-multi-byte-number ()
-  "Convert multi-byte numbers in region into single-byte number"
-  (interactive)
-  (my/replace-strings-in-region-by-list
-   '(("1" ."１")
-     ("2" ."２")
-     ("3" ."３")
-     ("4" ."４")
-     ("5" ."５")
-     ("6" ."６")
-     ("7" ."７")
-     ("8" ."８")
-     ("9" ."９")
-     ("0" ."０"))))
-
 (defun my/convert-yakumono-to-half-width ()
   "Replace multi byte punctuation marks to half width chars"
   (interactive)
@@ -125,36 +85,6 @@
      ("（" . "(")
      ("）" . ")")
      ("・" . "･"))))
-
-(defun my/convert-hex-color-to-rgb (hex)
-  (interactive "sHEX: ")
-  (let (result)
-    (when (string-match
-           "^\\s-*\\#\\([0-9a-fA-F]\\)\\([0-9a-fA-F]\\)\\([0-9a-fA-F]\\)\\s-*$"
-           hex)
-      (let (($m1 (match-string 1 hex))
-            ($m2 (match-string 2 hex))
-            ($m3 (match-string 3 hex)))
-        (setq result (list (read (format "#x%s%s" $m1 $m1))
-                           (read (format "#x%s%s" $m2 $m2))
-                           (read (format "#x%s%s" $m3 $m3))))))
-    (when (string-match
-           "^\\s-*\\#\\([0-9a-fA-F]\\{2\\}\\)\\([0-9a-fA-F]\\{2\\}\\)\\([0-9a-fA-F]\\{2\\}\\)\\s-*$"
-           hex)
-      (setq result (list (read (format "#x%s" (match-string 1 hex)))
-                         (read (format "#x%s" (match-string 2 hex)))
-                         (read (format "#x%s" (match-string 3 hex))))))
-    result))
-
-(defun my/convert-color-name-to-hex (color-name)
-  (let ((rgb) (hex "#"))
-    (mapc (lambda (x)
-            (setq rgb (cons (round (* x 255)) rgb)))
-          (color-name-to-rgb color-name))
-    (setq rgb (nreverse rgb))
-    (mapc (lambda (x) (setq hex (concat hex (format "%02x" x))))
-          rgb)
-    hex))
 
 ;;; Other
 (defun my/count-lines-and-chars ()
@@ -183,18 +113,64 @@
     (if (eq starting-position position)
         (move-beginning-of-line 1))))
 
-(defun my/random-color ()
-  (interactive)
-  (format "#%02x%02x%02x"
-          (cl-random 255)
-          (cl-random 255)
-          (cl-random 255)))
-
 (defun my/delete-DS_Store-under-current-directory-recursively ()
   (interactive)
   (shell-command "find . -name '*.DS_Store' -type f -delete")
   (if (eq major-mode 'dired-mode)
       (revert-buffer)))
+
+(use-package google-translate
+  :init (el-get-bundle google-translate)
+  :bind ("C-c t" . google-translate-enja-or-jaen)
+  :config
+  (defvar google-translate-english-chars "[:ascii:]’“”–"
+    "When these characters are included, they are regarded as English")
+  (defun google-translate-enja-or-jaen (&optional string)
+    "Google translate region or current sentence with automatic language discrimination"
+    (interactive)
+    (setq string
+          (cond ((stringp string) string)
+                (current-prefix-arg
+                 (read-string "Google Translate: "))
+                ((use-region-p)
+                 (buffer-substring (region-beginning) (region-end)))
+                (t
+                 (save-excursion
+                   (let (s)
+                     (forward-char 1)
+                     (backward-sentence)
+                     (setq s (point))
+                     (forward-sentence)
+                     (buffer-substring s (point)))))))
+    (let* ((asciip (string-match
+                    (format "\\`[%s]+\\'" google-translate-english-chars)
+                    string)))
+      (run-at-time 0.1 nil 'deactivate-mark)
+      (google-translate-translate
+       (if asciip "en" "ja")
+       (if asciip "ja" "en")
+       string))))
+
+(use-package htmlize
+  :init (el-get-bundle htmlize)
+  :config
+  (defun my/htmlize-and-browse ()
+    (interactive)
+    (defcustom
+      htmlize-and-browse-directory-path temporary-file-directory
+      "htmlize-and-browse-temporary-file-directory"
+      :type  'string
+      :group 'htmlize-and-browse)
+    (setq htmlize-and-browse-buffer-file-name
+          (concat "htmlize-and-browse-"
+                  (format-time-string "%Y%m%d%H%M%S" (current-time)) ".html"))
+    (setq htmlize-and-browse-buffer-file-path
+          (concat htmlize-and-browse-directory-path htmlize-and-browse-buffer-file-name))
+    (with-current-buffer (htmlize-buffer)
+      (write-file htmlize-and-browse-buffer-file-path)
+      (set-buffer-modified-p nil)
+      (kill-buffer htmlize-and-browse-buffer-file-name)
+      (shell-command (concat "open " htmlize-and-browse-buffer-file-path)))))
 
 ;;--------------------------------------------------
 ;; Keybind
@@ -205,9 +181,6 @@
  ("C-o" . my/other-window-or-split)
  ("C-w" . my/killregion-or-deletewindow)
  ("C-z" . help-command)
- ("C-S-f" . forward-word)
- ("C-S-b" . backward-word)
- ("C-S-v" . cua-scroll-down)
  ("C-c l" . toggle-truncate-lines))
 
 ;;--------------------------------------------------
