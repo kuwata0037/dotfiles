@@ -181,9 +181,6 @@
  ("C-o" . my/other-window-or-split)
  ("C-w" . my/killregion-or-deletewindow)
  ("C-z" . help-command)
- ("C-S-f" . forward-word)
- ("C-S-b" . backward-word)
- ("C-S-v" . cua-scroll-down)
  ("C-c l" . toggle-truncate-lines))
 
 ;;--------------------------------------------------
