@@ -119,6 +119,59 @@
   (if (eq major-mode 'dired-mode)
       (revert-buffer)))
 
+(use-package google-translate
+  :init (el-get-bundle google-translate)
+  :bind ("C-c t" . google-translate-enja-or-jaen)
+  :config
+  (defvar google-translate-english-chars "[:ascii:]’“”–"
+    "When these characters are included, they are regarded as English")
+  (defun google-translate-enja-or-jaen (&optional string)
+    "Google translate region or current sentence with automatic language discrimination"
+    (interactive)
+    (setq string
+          (cond ((stringp string) string)
+                (current-prefix-arg
+                 (read-string "Google Translate: "))
+                ((use-region-p)
+                 (buffer-substring (region-beginning) (region-end)))
+                (t
+                 (save-excursion
+                   (let (s)
+                     (forward-char 1)
+                     (backward-sentence)
+                     (setq s (point))
+                     (forward-sentence)
+                     (buffer-substring s (point)))))))
+    (let* ((asciip (string-match
+                    (format "\\`[%s]+\\'" google-translate-english-chars)
+                    string)))
+      (run-at-time 0.1 nil 'deactivate-mark)
+      (google-translate-translate
+       (if asciip "en" "ja")
+       (if asciip "ja" "en")
+       string))))
+
+(use-package htmlize
+  :init (el-get-bundle htmlize)
+  :config
+  (defun my/htmlize-and-browse ()
+    (interactive)
+    (defcustom
+      htmlize-and-browse-directory-path temporary-file-directory
+      "htmlize-and-browse-temporary-file-directory"
+      :type  'string
+      :group 'htmlize-and-browse)
+    (setq htmlize-and-browse-buffer-file-name
+          (concat "htmlize-and-browse-"
+                  (format-time-string "%Y%m%d%H%M%S" (current-time)) ".html"))
+    (setq htmlize-and-browse-buffer-file-path
+          (concat htmlize-and-browse-directory-path htmlize-and-browse-buffer-file-name))
+    (with-current-buffer (htmlize-buffer)
+      (write-file htmlize-and-browse-buffer-file-path)
+      (set-buffer-modified-p nil)
+      (kill-buffer htmlize-and-browse-buffer-file-name)
+      (shell-command (concat "open " htmlize-and-browse-buffer-file-path)))))
+
 ;;--------------------------------------------------
 ;; Keybind
 ;;--------------------------------------------------
