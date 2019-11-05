@@ -57,7 +57,7 @@
 	# pull
 	pl = pull
 	# hub
-	pr  = pull-request
+	pre = pull-request
 	see = browse
 [pretty]
 	changelog=format:%x09%C(yellow)%<(9,trunc)%H %C(green)%>(13)[%ar] %C(auto)%s %C(auto)%d
