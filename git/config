@@ -26,6 +26,7 @@
 	cd  = commit --amend
 	# branch
 	br = branch -vv
+	ba = branch -avv
 	bn = branch -avv --no-merged
 	bd = branch -d
 	# checkout
