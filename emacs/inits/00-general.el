@@ -37,7 +37,7 @@
 
 ;;; Region
 (cua-mode)
-(setq cua-enable-cua-keys nil)
+(setq-default cua-enable-cua-keys nil)
 (use-package expand-region
   :init (el-get-bundle expand-region)
   :bind ("C-j" . er/expand-region))
