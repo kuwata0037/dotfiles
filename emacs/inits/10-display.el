@@ -29,7 +29,7 @@
      (:background "LightGoldenrodYellow" +1))
     (t (:bold +1)))
   "hl-line's my face")
-(setq hl-line-face 'my/hl-line-face)
+(setq-default hl-line-face 'my/hl-line-face)
 (global-hl-line-mode +1)
 
 ;;; Symbol
