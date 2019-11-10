@@ -15,3 +15,7 @@ dotfiles
 ``` shell
 $ make deploy
 ```
+
+## License
+
+- [MIT](LICENSE)
