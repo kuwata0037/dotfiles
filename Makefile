@@ -26,6 +26,7 @@ clean: ## Remove the dotfiles from $HOME
 .PHONY: ignore
 ignore: ## Update git ignore file
 	@echo '==> Update git ignore.'
+	@gibo update
 	@gibo dump Linux macOS Emacs Vim JetBrains VisualStudioCode > $(DOTPATH)/git/ignore
 
 .PHONY: help
