@@ -16,7 +16,7 @@ or set -l XDG_CONFIG_HOME ~/.config
 set -l local_paths /usr/local/{sbin,bin} /usr/{sbin,bin} /{sbin,bin}
 
 ## go
-set -gx GOPATH $HOME/dev
+set -gx GOPATH $HOME/.go
 set local_paths $GOPATH/bin $local_paths
 
 ## rust
@@ -32,7 +32,6 @@ set -g fish_user_paths $local_paths
 # Misc
 set -gx LANG en_US.UTF-8
 set -gx TERM xterm-256color
-set -gx GHQ_ROOT $GOPATH/src
 set -gx TMUX_PLUGIN_MANAGER_PATH $XDG_CONFIG_HOME/tmux/plugins/
 set -gx FZF_LEGACY_KEYBINDINGS 0
 set -gx FZF_DEFAULT_OPTS '--cycle --reverse --bind "?:toggle-preview"'
