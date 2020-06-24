@@ -4,6 +4,7 @@
 alias e 'emacsclient -nw -a ""'
 alias ekill 'emacsclient -e "(kill-emacs)"'
 alias g 'git'
+alias gg 'ghq get'
 
 ########################################
 ### ENVIRONMENT
