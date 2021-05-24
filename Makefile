@@ -13,7 +13,6 @@ deploy: clean ## Create symlink of dotfiles to $HOME
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(CONFPATH);)
 	@ln -sfnv $(DOTPATH)/emacs $(HOME)/.emacs.d
 	@ln -sfnv $(DOTPATH)/zsh/zshenv $(HOME)/.zshenv
-	@ln -sfnv $(DOTPATH)/tmux/tmux.conf $(HOME)/.tmux.conf
 
 .PHONY: clean
 clean: ## Remove the dotfiles from $HOME
@@ -21,7 +20,6 @@ clean: ## Remove the dotfiles from $HOME
 	@-$(foreach val, $(DOTFILES), rm -vrf $(CONFPATH)/$(notdir $(val));)
 	@-rm -vrf $(HOME)/.emacs.d
 	@-rm -vrf $(HOME)/.zshenv
-	@-rm -vrf $(HOME)/.tmux.conf
 
 .PHONY: ignore
 ignore: ## Update git ignore file
