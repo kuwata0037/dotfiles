@@ -32,6 +32,9 @@
 	# checkout
 	ch = checkout
 	cb = checkout -b
+	# switch
+	sw = switch
+	sc = switch -c
 	# reset
 	re = reset
 	rh = reset --hard
