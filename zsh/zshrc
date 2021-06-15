@@ -123,3 +123,14 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt inc_append_history
 setopt share_history
+
+#
+# Appearance
+#
+zinit ice from"gh-r" as"program"; zinit light starship/starship
+eval "$(starship init zsh)"
+
+### fish like
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma/history-search-multi-word
