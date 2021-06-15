@@ -57,3 +57,25 @@ zinit light-mode for \
     zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
+
+#
+# Alias
+#
+alias e='emacsclient -nw -a ""'
+alias ekil='emacsclient -e "(kill-emacs)"'
+alias g='git'
+alias mk='command mkdir -p'
+
+zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
+zinit light sharkdp/bat
+alias cat='bat'
+
+zinit ice as"program" from"gh-r" pick"*/exa"
+zinit light ogham/exa
+alias ls='exa '
+alias ll='exa -lh'
+alias la='exa -alh'
+
+zinit ice from"gh-r" as"program" pick"*/ghq"
+zinit light x-motemen/ghq
+alias gg='ghq get'
