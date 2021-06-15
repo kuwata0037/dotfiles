@@ -22,7 +22,7 @@ export GOPATH=$HOME/.go
 
 ### Path
 path=(
-    $HOME/.go/bin(N-/)
+    $GOPATH/bin(N-/)
     $HOME/.cargo/bin(N-/)
     $HOMEBREW_PREFIX/{sbin,bin}(N-/)
     $HOME/.local/bin(N-/)
