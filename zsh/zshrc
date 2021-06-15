@@ -1,6 +1,38 @@
 echo "Load zshrc"
 
 #
+# Environment
+#
+### General
+export LANG=en_US.UTF-8
+export TERM=xterm-256color
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+export TMUX_PLUGIN_MANAGER_PATH=$XDG_CONFIG_HOME/tmux/plugins
+
+### Homebrew
+export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
+export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
+export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
+
+### Go
+export GOPATH=$HOME/.go
+
+### Path
+path=(
+    $HOME/.go/bin(N-/)
+    $HOME/.cargo/bin(N-/)
+    $HOMEBREW_PREFIX/{sbin,bin}(N-/)
+    /usr/local/{sbin,bin}(N-/)
+    /usr/{sbin,bin}(N-/)
+    /{sbin,bin}(N-/)
+    $path
+)
+typeset -Ug PATH
+
+#
 # Plugin Manager
 #
 ### Added by Zinit's installer
