@@ -93,6 +93,8 @@ bindkey "^g" anyframe-widget-cd-ghq-repository
 bindkey "^r" anyframe-widget-put-history
 bindkey "^xb" anyframe-widget-checkout-git-branch
 bindkey "^xk" anyframe-widget-kill
+zstyle ":anyframe:selector:fzf:" command 'fzf --reverse'
+zstyle ":anyframe:selector:fzf-tmux:" command 'fzf-tmux --reverse'
 
 #
 # Completion
