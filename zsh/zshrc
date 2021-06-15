@@ -86,3 +86,27 @@ alias gg='ghq get'
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
+
+#
+# Completion
+#
+autoload -Uz compinit && compinit
+
+zinit ice wait lucid blockf
+zinit light zsh-users/zsh-completions
+
+zinit wait lucid blockf is-snippet as"completion" for \
+    OMZP::docker/_docker \
+    OMZP::docker-compose/_docker-compose \
+    OMZP::rust/_rust \
+    OMZP::cargo/_cargo \
+    OMZP::rustup/_rustup
+
+setopt magic_equal_subst
+setopt menu_complete
+setopt no_flow_control
+
+zstyle ':completion:*' format '%B%F{blue}%d%f%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*:default' menu select=2
