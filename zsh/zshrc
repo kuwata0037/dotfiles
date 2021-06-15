@@ -86,6 +86,14 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
+zinit ice from"gh-r" as"program"
+zinit light junegunn/fzf-bin
+zinit light mollifier/anyframe
+bindkey "^g" anyframe-widget-cd-ghq-repository
+bindkey "^r" anyframe-widget-put-history
+bindkey "^xb" anyframe-widget-checkout-git-branch
+bindkey "^xk" anyframe-widget-kill
+
 #
 # Completion
 #
@@ -132,4 +140,4 @@ eval "$(starship init zsh)"
 ### fish like
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
-zinit light zdharma/history-search-multi-word
+# zinit light zdharma/history-search-multi-word
