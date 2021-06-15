@@ -1,3 +1,5 @@
 ### My Zsh.gitignore
 .zcompdump
-zplug/
+.zsh-history
+.zcompcache/
+.zinit/
