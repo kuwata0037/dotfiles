@@ -79,3 +79,10 @@ alias la='exa -alh'
 zinit ice from"gh-r" as"program" pick"*/ghq"
 zinit light x-motemen/ghq
 alias gg='ghq get'
+
+#
+# Keybind
+#
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
