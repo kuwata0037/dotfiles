@@ -25,6 +25,7 @@ path=(
     $HOME/.go/bin(N-/)
     $HOME/.cargo/bin(N-/)
     $HOMEBREW_PREFIX/{sbin,bin}(N-/)
+    $HOME/.local/bin(N-/)
     /usr/local/{sbin,bin}(N-/)
     /usr/{sbin,bin}(N-/)
     /{sbin,bin}(N-/)
