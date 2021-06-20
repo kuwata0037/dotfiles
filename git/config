@@ -14,7 +14,7 @@
 [alias]
 	alias   = "!git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort"
 	ig      = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
-	refresh = "!git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I {} git branch -d {}"
+	refresh = "!git branch --merged | grep -vE '^\\*|main$|master$|develop$' | xargs -I {} git branch -d {}"
 	# add
 	ad = add
 	aa = add -A
