@@ -124,6 +124,12 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=2
 
+### aws cli
+if type aws > /dev/null && type aws_completer > /dev/null; then
+    autoload bashcompinit && bashcompinit
+    complete -C aws_completer aws
+fi
+
 #
 # History
 #
