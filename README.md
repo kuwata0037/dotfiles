@@ -1,21 +1,14 @@
 # dotfiles
 
-## Preparations
-
-### fish
-
-- [fzf](https://github.com/junegunn/fzf)
-- [ghq](https://github.com/motemen/ghq)
-
-### tmux
-
-- [powerline-fonts](https://github.com/powerline/fonts)
-
-## Setup
+## Install
 
 ```sh
 make deploy
 ```
+
+## Dependency
+
+- [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 
 ## License
 
