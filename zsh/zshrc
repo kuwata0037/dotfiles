@@ -84,6 +84,10 @@ zinit ice from"gh-r" as"program" pick"*/ghq"
 zinit light x-motemen/ghq
 alias gg='ghq get'
 
+zinit ice lucid wait"0"
+zinit light "mollifier/cd-gitroot"
+alias cdr='cd-gitroot'
+
 #
 # Keybind
 #
