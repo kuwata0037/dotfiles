@@ -131,6 +131,12 @@ if type aws > /dev/null && type aws_completer > /dev/null; then
     complete -C aws_completer aws
 fi
 
+### cd
+export ENHANCD_HOOK_AFTER_CD=ls
+export ENHANCD_DISABLE_HOME=1
+zinit ice wait lucid pick"init.sh"
+zinit light "b4b4r07/enhancd"
+
 #
 # History
 #
