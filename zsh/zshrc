@@ -139,6 +139,7 @@ fi
 ### cd
 export ENHANCD_HOOK_AFTER_CD=ls
 export ENHANCD_DISABLE_HOME=1
+export ENHANCD_DOT_ARG="."
 zinit ice wait lucid pick"init.sh"
 zinit light "b4b4r07/enhancd"
 
