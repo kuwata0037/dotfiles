@@ -27,11 +27,6 @@ ignore: ## Update git ignore file
 	@gibo update
 	@gibo dump Linux macOS Emacs Vim JetBrains VisualStudioCode > $(DOTPATH)/git/ignore
 
-.PHONY: completion
-completion: ## Update fish completion files
-	@echo '==> Update fish completion.'
-	@-rustup completions fish > $(DOTPATH)/fish/completions/rustup.fish
-
 .PHONY: help
 help: ## Show self-documented Makefile
 	@echo 'Usage: make [target]'
