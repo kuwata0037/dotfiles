@@ -14,7 +14,6 @@ export TERM=xterm-256color
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 export TMUX_PLUGIN_MANAGER_PATH=$XDG_CONFIG_HOME/tmux/plugins
-export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/config.toml
 
 ### Homebrew
 case $OSTYPE in
