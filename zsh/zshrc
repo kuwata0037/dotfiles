@@ -30,6 +30,11 @@ esac
 ### Go
 export GOPATH=$HOME/.go
 
+### Sccache
+if type sccache > /dev/null; then
+    export RUSTC_WRAPPER=$(which sccache)
+fi
+
 ### Path
 path=(
     $GOPATH/bin(N-/)
