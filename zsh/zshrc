@@ -88,9 +88,9 @@ alias cat='bat'
 
 zinit ice as"program" from"gh-r" pick"*/exa"
 zinit light ogham/exa
-alias ls='exa '
-alias ll='exa -lh'
-alias la='exa -alh'
+alias ls='exa --icons'
+alias ll='exa -lh --icons'
+alias la='exa -alh --icons'
 
 zinit ice from"gh-r" as"program" pick"*/ghq"
 zinit light x-motemen/ghq
