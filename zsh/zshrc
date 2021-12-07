@@ -30,6 +30,9 @@ esac
 ### Go
 export GOPATH=$HOME/.go
 
+### Python
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+
 ### Sccache
 if type sccache > /dev/null; then
     export RUSTC_WRAPPER=$(which sccache)
