@@ -21,6 +21,10 @@ if status --is-interactive
     set -gx GOPATH $HOME/.go
     set local_paths $GOPATH/bin $local_paths
 
+    ## javascript
+    set -gx VOLTA_HOME $HOME/.volta
+    set local_paths $VOLTA_HOME/bin $local_paths
+
     ## rust
     set local_paths ~/.cargo/bin $local_paths
 
