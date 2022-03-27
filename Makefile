@@ -1,36 +1,18 @@
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
-CONFPATH   := $(HOME)/.config
-CANDIDATES := $(shell find . -maxdepth 1 -mindepth 1 -type d)
-EXCLUSIONS := %.git %emacs
-DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 .PHONY: all
 all: help
-
-.PHONY: deploy
-deploy: clean ## Create symlink of dotfiles to $HOME
-	@echo '==> Start to deploy dotfiles.'
-	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(CONFPATH);)
-	@ln -sfnv $(DOTPATH)/emacs $(HOME)/.emacs.d
-	@ln -sfnv $(DOTPATH)/zsh/zshenv $(HOME)/.zshenv
-
-.PHONY: clean
-clean: ## Remove the dotfiles from $HOME
-	@echo '==> Remove dotfiles.'
-	@-$(foreach val, $(DOTFILES), rm -vrf $(CONFPATH)/$(notdir $(val));)
-	@-rm -vrf $(HOME)/.emacs.d
-	@-rm -vrf $(HOME)/.zshenv
 
 .PHONY: ignore
 ignore: ## Update git ignore file
 	@echo '==> Update git ignore.'
 	@gibo update
-	@gibo dump Linux macOS Emacs Vim JetBrains VisualStudioCode > $(DOTPATH)/git/ignore
+	@gibo dump Linux macOS Emacs Vim JetBrains VisualStudioCode > $(DOTPATH)/private_dot_config/private_git/ignore
 
 .PHONY: completion
 completion: ## Update fish completion files
 	@echo '==> Update fish completion.'
-	@-rustup completions fish > $(DOTPATH)/fish/completions/rustup.fish
+	@-rustup completions fish > $(DOTPATH)/private_dot_config/private_fish/completions/rustup.fish
 
 .PHONY: help
 help: ## Show self-documented Makefile
