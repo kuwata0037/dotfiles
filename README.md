@@ -1,14 +1,12 @@
 # dotfiles
 
+kuwata0037's dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi).
+
 ## Install
 
 ```sh
-make deploy
+chezmoi init --apply git@github.com:kuwata0037/dotfiles.git
 ```
-
-## Dependency
-
-- [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 
 ## License
 
