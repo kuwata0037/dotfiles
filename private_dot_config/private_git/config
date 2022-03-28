@@ -5,6 +5,8 @@
 	autocrlf = input
 [color]
 	ui = auto
+[init]
+	defaultBranch = main
 [push]
 	default = simple
 [pull]
