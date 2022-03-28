@@ -27,6 +27,9 @@ if status is-interactive
 
     ## rust
     set local_paths ~/.cargo/bin $local_paths
+    if type sccache 2>/dev/null
+        set -gx RUSTC_WRAPPER (which sccache)
+    end
 
     ## update PATH via fish_user_paths
     set -g fish_user_paths $local_paths
