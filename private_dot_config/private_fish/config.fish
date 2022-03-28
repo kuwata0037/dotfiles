@@ -28,10 +28,6 @@ if status is-interactive
     ## rust
     set local_paths ~/.cargo/bin $local_paths
 
-    ## **env
-    set local_paths ~/.pyenv/{bin,shims} $local_paths
-    set local_paths ~/.rbenv/{bin,shims} $local_paths
-
     ## update PATH via fish_user_paths
     set -g fish_user_paths $local_paths
 
