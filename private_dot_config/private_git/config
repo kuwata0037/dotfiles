@@ -6,7 +6,7 @@
 [color]
 	ui = auto
 [push]
-	default = upstream
+	default = simple
 [pull]
 	rebase = true
 [merge]
