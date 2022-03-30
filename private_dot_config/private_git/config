@@ -58,6 +58,7 @@
 	# pull
 	pl = pull
 [ghq]
+	root = ~/.local/share/chezmoi
 	root = ~/src
 [secrets]
 	providers = git secrets --aws-provider
