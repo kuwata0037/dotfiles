@@ -14,7 +14,6 @@ fi
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
 export TMUX_PLUGIN_MANAGER_PATH=$XDG_CONFIG_HOME/tmux/plugins
 
 ### Homebrew
@@ -76,10 +75,10 @@ autoload -Uz _zinit
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
-    zdharma-continuum/zinit-annex-rust \
-    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-readurl \
+    zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-bin-gem-node
+    zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
 
@@ -179,10 +178,6 @@ setopt share_history
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/p10k.zsh.
 [[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
-
-### diff
-zinit ice as"program" from"gh-r" pick"*/delta"
-zinit light dandavison/delta
 
 ### fish like
 zinit light zsh-users/zsh-autosuggestions
