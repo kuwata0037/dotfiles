@@ -71,3 +71,8 @@ set -gx GHQ_SELECTOR fzf-tmux
 if not functions -q fisher
     curl -sL https://git.io/fisher | source && fisher update
 end
+
+#
+# Appearance
+#
+starship init fish | source
