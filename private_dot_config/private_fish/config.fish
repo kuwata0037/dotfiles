@@ -45,7 +45,7 @@ set -gx POETRY_VIRTUALENVS_IN_PROJECT true
 
 # Rust
 set local_paths ~/.cargo/bin $local_paths
-if type sccache 2>/dev/null
+if command -qs sccache
     set -gx RUSTC_WRAPPER (which sccache)
 end
 
