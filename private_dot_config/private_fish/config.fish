@@ -59,6 +59,7 @@ set -gx FZF_DEFAULT_OPTS '--cycle --reverse --bind "?:toggle-preview"'
 set -gx FZF_FIND_FILE_OPTS '--preview "head -100 {}"'
 set -gx FZF_CD_OPTS '--preview "tree -C {} | head -n100"'
 set -gx FZF_CD_WITH_HIDDEN_OPTS $FZF_CD_OPTS
+set -gx FZF_LEGACY_KEYBINDINGS 0
 
 ### Misc
 set -gx LANG en_US.UTF-8
