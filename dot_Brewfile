@@ -21,8 +21,6 @@ brew "starship"
 brew "tig"
 brew "tmux"
 brew "topgrade"
-
-{{ if eq .chezmoi.os "darwin" }}
 cask "alfred"
 cask "docker"
 cask "font-hackgen-nerd"
@@ -31,4 +29,3 @@ cask "iterm2"
 cask "karabiner-elements"
 cask "visual-studio-code"
 mas "Snap", id: 418073146
-{{ end }}
