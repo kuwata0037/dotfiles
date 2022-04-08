@@ -36,6 +36,16 @@ set -l local_paths /usr/local/{sbin,bin} /usr/{sbin,bin} /{sbin,bin}
 set -gx GOPATH $HOME/.go
 set local_paths $GOPATH/bin $local_paths
 
+    # Homebrew
+    if test (uname -s) = Linux
+        set -gx HOMEBREW_PREFIX /home/linuxbrew/.linuxbrew
+        set -gx HOMEBREW_CELLAR $HOMEBREW_PREFIX/Cellar
+        set -gx HOMEBREW_REPOSITORY $HOMEBREW_PREFIX/Homebrew
+        set -gx MANPATH $HOMEBREW_PREFIX/share/man $MANPATH
+        set -gx INFOPATH $HOMEBREW_PREFIX/share/info $INFOPATH
+        set local_paths $HOMEBREW_PREFIX/{sbin,bin}
+    end
+
 # JavaScript
 set -gx VOLTA_HOME $HOME/.volta
 set local_paths $VOLTA_HOME/bin $local_paths
