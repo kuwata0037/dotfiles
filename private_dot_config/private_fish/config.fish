@@ -37,6 +37,9 @@ if status is-interactive
     set -gx GOPATH $HOME/.go
     set local_paths $GOPATH/bin $local_paths
 
+    # Google Cloud CLI
+    set local_paths ~/.google-cloud-sdk/bin $local_paths
+
     # Homebrew
     if test (uname -s) = Linux
         set -gx HOMEBREW_PREFIX /home/linuxbrew/.linuxbrew

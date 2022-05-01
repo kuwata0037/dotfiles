@@ -29,9 +29,17 @@ install_rust() {
     fi
 }
 
+install_gcloud() {
+    if !(type gcloud >/dev/null 2>&1); then
+        mkdir -p ~/.google-cloud-sdk
+        curl -fSL https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-381.0.0-linux-x86_64.tar.gz | tar zx -C ~/.google-cloud-sdk/ --strip-components 1
+    fi
+}
+
 main() {
     install_homebrew
     install_rust
+    install_gcloud
 }
 
 main

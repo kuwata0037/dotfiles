@@ -47,6 +47,7 @@ path=(
     $GOPATH/bin(N-/)
     $VOLTA_HOME/bin(N-/)
     $HOME/.cargo/bin(N-/)
+    $HOME/.google-cloud-sdk/bin(N-/)
     $HOME/.local/bin(N-/)
     $HOMEBREW_PREFIX/{sbin,bin}(N-/)
     /usr/local/{sbin,bin}(N-/)
