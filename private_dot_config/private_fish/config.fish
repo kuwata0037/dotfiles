@@ -44,7 +44,7 @@ if status is-interactive
         set -gx HOMEBREW_REPOSITORY $HOMEBREW_PREFIX/Homebrew
         set -gx MANPATH $HOMEBREW_PREFIX/share/man $MANPATH
         set -gx INFOPATH $HOMEBREW_PREFIX/share/info $INFOPATH
-        set local_paths $HOMEBREW_PREFIX/{sbin,bin}
+        set local_paths $HOMEBREW_PREFIX/{sbin,bin} $local_paths
     end
 
     # JavaScript
