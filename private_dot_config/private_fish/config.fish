@@ -37,7 +37,7 @@ if status is-interactive
     set -gx GOPATH $HOME/.go
     set local_paths $GOPATH/bin $local_paths
 
-    # Google Cloud CLI
+    # Google Cloud SDK
     set local_paths ~/.google-cloud-sdk/bin $local_paths
 
     # Homebrew
