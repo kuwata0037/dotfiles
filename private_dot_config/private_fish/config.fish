@@ -50,7 +50,7 @@ if status is-interactive
         set local_paths $HOMEBREW_PREFIX/{sbin,bin} $local_paths
     end
 
-    # JavaScript
+    # JavaScript & TypeScript
     set -gx VOLTA_HOME $HOME/.volta
     set local_paths $VOLTA_HOME/bin $local_paths
 
@@ -98,5 +98,5 @@ if status is-interactive
     #
     # Appearance
     #
-    starship init fish | source
+    starship init fish | source # Added the following to the end of config.
 end
