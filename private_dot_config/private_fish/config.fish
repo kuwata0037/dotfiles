@@ -81,6 +81,14 @@ if status is-interactive
     set -gx GHQ_SELECTOR fzf-tmux
 
     #
+    # Settings
+    #
+    ### direnv
+    if command -qs direnv
+        direnv hook fish | source
+    end
+
+    #
     # Plugins
     #
     if not functions -q fisher
