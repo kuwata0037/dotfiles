@@ -28,7 +28,7 @@ if status is-interactive
     #
     ### XDG
     set -q XDG_CONFIG_HOME
-    or set -l XDG_CONFIG_HOME ~/.config
+    or set -gx XDG_CONFIG_HOME ~/.config
 
     ### Path
     set -l local_paths /usr/local/{sbin,bin} /usr/{sbin,bin} /{sbin,bin}
