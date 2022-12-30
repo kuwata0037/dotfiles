@@ -12,7 +12,8 @@ ignore: ## Update git ignore file
 .PHONY: completion
 completion: ## Update fish completion files
 	@echo '==> Update fish completion.'
-	@-rustup completions fish > $(DOTPATH)/private_dot_config/private_fish/completions/rustup.fish
+	@-mkdir -p ~/.config/fish/completions
+	@-rustup completions fish > ~/.config/fish/completions/rustup.fish
 
 .PHONY: help
 help: ## Show self-documented Makefile
