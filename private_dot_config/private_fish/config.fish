@@ -76,7 +76,7 @@ if status is-interactive
     set -gx FZF_LEGACY_KEYBINDINGS 0
 
     ### Misc
-    set -gx LANG en_US.UTF-8
+    set -gx LANG ja_JP.UTF-8
     set -gx TERM xterm-256color
     set -gx GHQ_SELECTOR fzf-tmux
 
