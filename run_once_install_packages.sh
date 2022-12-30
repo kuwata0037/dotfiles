@@ -43,6 +43,15 @@ install_rust() {
     fi
 }
 
+install_cargo_subcommand() {
+    if type cargo >/dev/null 2>&1; then
+        cargo install \
+            cargo-edit \
+            cargo-nextest \
+            cargo-update
+    fi
+}
+
 install_google_cloud_sdk() {
     if !(type gcloud >/dev/null 2>&1); then
         mkdir -p ~/.google-cloud-sdk
@@ -54,6 +63,7 @@ main() {
     install_apt
     install_homebrew
     install_rust
+    install_cargo_subcommand
     install_google_cloud_sdk
 }
 
