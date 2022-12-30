@@ -8,6 +8,13 @@ kuwata0037's dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi).
 sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply kuwata0037
 ```
 
+## Setting
+
+```sh
+echo '/home/linuxbrew/.linuxbrew/bin/fish' | sudo tee -a /etc/shells
+chsh -s /home/linuxbrew/.linuxbrew/bin/fish
+```
+
 ## License
 
 - [MIT](LICENSE)
