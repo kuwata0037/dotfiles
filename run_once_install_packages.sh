@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+install_apt() {
+    if type apt >/dev/null 2>&1; then
+        sudo apt update
+        sudo apt install -y \
+            language-pack-ja \
+            libgit2-dev \
+            libssh-dev \
+            libssl-dev \
+            pkg-config \
+            wslu \
+            xdg-utils
+    fi
+}
+
 install_homebrew() {
     if !(type brew >/dev/null 2>&1); then
         if [ "$(uname)" == 'Darwin' ]; then
@@ -37,6 +51,7 @@ install_google_cloud_sdk() {
 }
 
 main() {
+    install_apt
     install_homebrew
     install_rust
     install_google_cloud_sdk
