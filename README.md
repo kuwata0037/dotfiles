@@ -13,6 +13,8 @@ sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply kuwata0037
 ```sh
 echo '/home/linuxbrew/.linuxbrew/bin/fish' | sudo tee -a /etc/shells
 chsh -s /home/linuxbrew/.linuxbrew/bin/fish
+
+make completion
 ```
 
 ## License
