@@ -41,14 +41,18 @@ if status is-interactive
     set local_paths ~/.google-cloud-sdk/bin $local_paths
 
     # Homebrew
-    if test (uname -s) = Linux
-        set -gx HOMEBREW_PREFIX /home/linuxbrew/.linuxbrew
-        set -gx HOMEBREW_CELLAR $HOMEBREW_PREFIX/Cellar
-        set -gx HOMEBREW_REPOSITORY $HOMEBREW_PREFIX/Homebrew
-        set -gx MANPATH $HOMEBREW_PREFIX/share/man $MANPATH
-        set -gx INFOPATH $HOMEBREW_PREFIX/share/info $INFOPATH
-        set local_paths $HOMEBREW_PREFIX/{sbin,bin} $local_paths
+    set -gx HOMEBREW_PREFIX /usr/local
+    if test (uname) = Darwin; and test (uname -m) = arm64
+        set -gx HOMEBREW_PREFIX /opt/homebrew
     end
+    if test (uname) = Linux
+        set -gx HOMEBREW_PREFIX /home/linuxbrew/.linuxbrew
+    end
+    set -gx HOMEBREW_CELLAR $HOMEBREW_PREFIX/Cellar
+    set -gx HOMEBREW_REPOSITORY $HOMEBREW_PREFIX/Homebrew
+    set -gx MANPATH $HOMEBREW_PREFIX/share/man $MANPATH
+    set -gx INFOPATH $HOMEBREW_PREFIX/share/info $INFOPATH
+    set local_paths $HOMEBREW_PREFIX/{sbin,bin} $local_paths
 
     # JavaScript & TypeScript
     set -gx VOLTA_HOME $HOME/.volta
