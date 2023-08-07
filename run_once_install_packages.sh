@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-install_system_packages() {
+install_system_package() {
     if type apt-get >/dev/null 2>&1; then
         sudo apt-get update
         sudo apt-get install -y \
@@ -50,7 +50,7 @@ install_rust() {
     fi
 }
 
-install_cargo_subcommands() {
+install_cargo_subcommand() {
     if type cargo >/dev/null 2>&1; then
         cargo install \
             cargo-edit \
@@ -71,7 +71,7 @@ install_google_cloud_sdk() {
 }
 
 main() {
-    install_system_packages
+    install_system_package
     install_homebrew
     install_rust
     install_cargo_subcommand
