@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-install_apt() {
-    if type apt >/dev/null 2>&1; then
-        sudo apt update
-        sudo apt install -y \
+install_system_packages() {
+    if type apt-get >/dev/null 2>&1; then
+        sudo apt-get update
+        sudo apt-get install -y \
             language-pack-ja \
             libgit2-dev \
             libssh-dev \
@@ -50,7 +50,7 @@ install_rust() {
     fi
 }
 
-install_cargo_subcommand() {
+install_cargo_subcommands() {
     if type cargo >/dev/null 2>&1; then
         cargo install \
             cargo-edit \
@@ -71,7 +71,7 @@ install_google_cloud_sdk() {
 }
 
 main() {
-    install_apt
+    install_system_packages
     install_homebrew
     install_rust
     install_cargo_subcommand
