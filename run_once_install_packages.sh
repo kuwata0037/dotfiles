@@ -44,7 +44,7 @@ install_homebrew() {
 
 install_rust() {
     if ! (type rustc >/dev/null 2>&1); then
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
     else
         echo "You have already installed Rust."
     fi
