@@ -15,7 +15,7 @@ install_apt() {
 }
 
 install_homebrew() {
-    if !(type brew >/dev/null 2>&1); then
+    if ! (type brew >/dev/null 2>&1); then
         # Install requirements
         # see: https://docs.brew.sh/Homebrew-on-Linux#requirements
         if [ "$(uname)" == 'Darwin' ]; then
@@ -43,7 +43,7 @@ install_homebrew() {
 }
 
 install_rust() {
-    if !(type rustc >/dev/null 2>&1); then
+    if ! (type rustc >/dev/null 2>&1); then
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     else
         echo "You have already installed Rust."
@@ -62,7 +62,7 @@ install_cargo_subcommand() {
 }
 
 install_google_cloud_sdk() {
-    if !(type gcloud >/dev/null 2>&1); then
+    if ! (type gcloud >/dev/null 2>&1); then
         mkdir -p ~/.google-cloud-sdk
         curl -fSL https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-381.0.0-linux-x86_64.tar.gz | tar zx -C ~/.google-cloud-sdk/ --strip-components 1
     else
