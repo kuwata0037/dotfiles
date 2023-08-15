@@ -55,9 +55,15 @@ install_cargo_subcommand() {
         curl -L --proto '=https' --tlsv1.2 -sSf \
             https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
         ~/.cargo/bin/cargo binstall -y \
+            cargo-audit \
             cargo-edit \
+            cargo-llvm-cov \
+            cargo-make \
             cargo-nextest \
-            cargo-update
+            cargo-sort \
+            cargo-udeps \
+            cargo-update \
+            cargo-watch
     else
         echo "Cargo is not installed. Please install manually."
     fi
