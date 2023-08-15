@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Install dotfiles
+      - name: Apply dotfiles
         run: sh -c "$(curl -fsLS chezmoi.io/get)" -- apply --source .
 
   lint:
