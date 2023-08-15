@@ -54,7 +54,7 @@ install_cargo_subcommand() {
     if type ~/.cargo/bin/cargo >/dev/null 2>&1; then
         curl -L --proto '=https' --tlsv1.2 -sSf \
             https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-        ~/.cargo/bin/cargo binstall \
+        ~/.cargo/bin/cargo binstall -y \
             cargo-edit \
             cargo-nextest \
             cargo-update
