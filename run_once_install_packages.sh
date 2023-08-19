@@ -33,13 +33,17 @@ install_homebrew() {
 
         # Install Homebrew
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-        # Install bundle
-        type brew >/dev/null 2>&1 && brew bundle --global
-        test -d /opt/homebrew && /opt/homebrew/bin/brew bundle --global
-        test -d ~/.linuxbrew && ~/.linuxbrew/bin/brew bundle --global
-        test -d /home/linuxbrew/.linuxbrew && /home/linuxbrew/.linuxbrew/bin/brew bundle --global
+    else
+        echo "You have already installed Homebrew."
     fi
+}
+
+install_homebrew_bundle() {
+    # Install bundle
+    type brew >/dev/null 2>&1 && brew bundle --global
+    test -d /opt/homebrew && /opt/homebrew/bin/brew bundle --global
+    test -d ~/.linuxbrew && ~/.linuxbrew/bin/brew bundle --global
+    test -d /home/linuxbrew/.linuxbrew && /home/linuxbrew/.linuxbrew/bin/brew bundle --global
 }
 
 install_rust() {
@@ -81,6 +85,7 @@ install_google_cloud_sdk() {
 main() {
     install_system_package
     install_homebrew
+    install_homebrew_bundle
     install_rust
     install_cargo_subcommand
     install_google_cloud_sdk
