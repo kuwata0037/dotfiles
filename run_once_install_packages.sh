@@ -40,10 +40,17 @@ install_homebrew() {
 
 install_homebrew_bundles() {
     # Install bundle
-    type brew >/dev/null 2>&1 && brew bundle --global
-    test -d /opt/homebrew && /opt/homebrew/bin/brew bundle --global
-    test -d ~/.linuxbrew && ~/.linuxbrew/bin/brew bundle --global
-    test -d /home/linuxbrew/.linuxbrew && /home/linuxbrew/.linuxbrew/bin/brew bundle --global
+    if type brew >/dev/null 2>&1; then
+        brew bundle --global
+    elif test -d /opt/homebrew; then
+        /opt/homebrew/bin/brew bundle --global
+    elif test -d ~/.linuxbrew; then
+        ~/.linuxbrew/bin/brew bundle --global
+    elif test -d /home/linuxbrew/.linuxbrew; then
+        /home/linuxbrew/.linuxbrew/bin/brew bundle --global
+    else
+        echo "Homebrew is not installed. Please install manually."
+    fi
 }
 
 install_rust() {
