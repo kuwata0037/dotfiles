@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-install_system_package() {
+install_system_packages() {
     if type apt-get >/dev/null 2>&1; then
         sudo apt-get update
         sudo apt-get install -y \
@@ -33,12 +33,23 @@ install_homebrew() {
 
         # Install Homebrew
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    else
+        echo "You have already installed Homebrew."
+    fi
+}
 
-        # Install bundle
-        type brew >/dev/null 2>&1 && brew bundle --global
-        test -d /opt/homebrew && /opt/homebrew/bin/brew bundle --global
-        test -d ~/.linuxbrew && ~/.linuxbrew/bin/brew bundle --global
-        test -d /home/linuxbrew/.linuxbrew && /home/linuxbrew/.linuxbrew/bin/brew bundle --global
+install_homebrew_bundles() {
+    # Install bundle
+    if type brew >/dev/null 2>&1; then
+        brew bundle --global
+    elif test -d /opt/homebrew; then
+        /opt/homebrew/bin/brew bundle --global
+    elif test -d ~/.linuxbrew; then
+        ~/.linuxbrew/bin/brew bundle --global
+    elif test -d /home/linuxbrew/.linuxbrew; then
+        /home/linuxbrew/.linuxbrew/bin/brew bundle --global
+    else
+        echo "Homebrew is not installed. Please install manually."
     fi
 }
 
@@ -50,7 +61,7 @@ install_rust() {
     fi
 }
 
-install_cargo_subcommand() {
+install_cargo_subcommands() {
     if type ~/.cargo/bin/cargo >/dev/null 2>&1; then
         curl -L --proto '=https' --tlsv1.2 -sSf \
             https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
@@ -79,10 +90,11 @@ install_google_cloud_sdk() {
 }
 
 main() {
-    install_system_package
+    install_system_packages
     install_homebrew
+    install_homebrew_bundles
     install_rust
-    install_cargo_subcommand
+    install_cargo_subcommands
     install_google_cloud_sdk
 }
 
