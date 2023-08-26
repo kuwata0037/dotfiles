@@ -1,5 +1,7 @@
 # dotfiles
 
+[![CI](https://github.com/kuwata0037/dotfiles/actions/workflows/ci.yaml/badge.svg)](https://github.com/kuwata0037/dotfiles/actions/workflows/ci.yaml)
+
 kuwata0037's dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi).
 
 ## Install
