@@ -95,11 +95,11 @@ zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 alias cat='bat'
 
-zinit ice as"program" from"gh-r" pick"*/exa"
-zinit light ogham/exa
-alias ls='exa --icons'
-alias ll='exa -lh --icons'
-alias la='exa -alh --icons'
+zinit ice as"program" from"gh-r" pick"*/eza"
+zinit light ogham/eza
+alias ls='eza --icons'
+alias ll='eza -lh --icons'
+alias la='eza -alh --icons'
 
 zinit ice from"gh-r" as"program" pick"*/ghq"
 zinit light x-motemen/ghq

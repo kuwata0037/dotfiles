@@ -16,10 +16,10 @@ if status is-interactive
     end
 
     ### Directory
-    if command -qs exa
-        alias ls 'exa --icons'
-        alias ll 'exa --icons -lh'
-        alias la 'exa --icons -alh'
+    if command -qs eza
+        alias ls 'eza --icons'
+        alias ll 'eza --icons -lh'
+        alias la 'eza --icons -alh'
     end
     alias mk 'command mkdir -p'
 
