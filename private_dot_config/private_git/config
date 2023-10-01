@@ -2,7 +2,8 @@
 	name  = kuwata0037
 	email = kuwata0037@gmail.com
 [core]
-	autocrlf = input
+	autocrlf  = input
+	quotepath = false
 [color]
 	ui = auto
 [init]
