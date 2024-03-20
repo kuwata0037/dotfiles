@@ -17,10 +17,10 @@ install_system_packages() {
 install_homebrew() {
     if ! (type brew >/dev/null 2>&1); then
         # Install requirements
-        # see: https://docs.brew.sh/Homebrew-on-Linux#requirements
         if [ "$(uname)" == 'Darwin' ]; then
             xcode-select --install
         elif type apt-get >/dev/null 2>&1; then
+            # see: https://docs.brew.sh/Homebrew-on-Linux#requirements
             sudo apt-get update
             sudo apt-get install -y build-essential procps curl file git
         elif type yum >/dev/null 2>&1; then
