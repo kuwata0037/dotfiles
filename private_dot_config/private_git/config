@@ -33,6 +33,7 @@
 	ba = branch -avv
 	bn = branch -avv --no-merged
 	bd = branch -d
+	bdd = branch -D
 	# checkout
 	ch = checkout
 	cb = checkout -b
