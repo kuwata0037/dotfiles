@@ -55,6 +55,7 @@
 	sh = show
 	# push
 	pu = push -u origin
+	pf = push -u origin --force-with-lease --force-if-includes
 	# fetch
 	fh = fetch --prune
 	# pull
