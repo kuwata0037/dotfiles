@@ -1,0 +1,23 @@
+[font]
+size = 16.0
+
+[font.bold]
+family = "HackGen Console NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "HackGen Console NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "HackGen Console NF"
+style = "Italic"
+
+[font.normal]
+family = "HackGen Console NF"
+style = "Regular"
+
+[window]
+decorations = "full"
+opacity = 0.8
+startup_mode = "Windowed"
